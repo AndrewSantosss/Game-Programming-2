@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://duovg3vo3475h"]
+
+[ext_resource type="Texture2D" uid="uid://o1lwxdrbkg4p" path="res://model/npc/pozonegro.jpg" id="1_412e7"]
+[ext_resource type="Texture2D" uid="uid://bwcx777tp1h2k" path="res://model/umihi.png" id="2_piiet"]
+[ext_resource type="Texture2D" uid="uid://cf8qjblssnre7" path="res://model/noparking.png" id="3_kwtgd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r84lv"]
+cull_mode = 2
+albedo_texture = ExtResource("1_412e7")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_piiet"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r2di4"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("2_piiet")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_412e7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kua2w"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("3_kwtgd")
+
+[node name="Node3D" type="Node3D" unique_id=19198192]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=671855754]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_r84lv")
+mesh = SubResource("PlaneMesh_piiet")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=788675106]
+transform = Transform3D(1.5244265, 0, 0, 0, -4.371139e-08, -1.097976, 0, 1, -4.7994053e-08, -3.0118666, 0, 0)
+material_override = SubResource("StandardMaterial3D_r2di4")
+mesh = SubResource("PlaneMesh_412e7")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1816635570]
+transform = Transform3D(1.9500734, 0, 0, 0, -4.371139e-08, -1.097976, 0, 1, -4.7994053e-08, -6.3361554, 0, 0)
+material_override = SubResource("StandardMaterial3D_kua2w")
+mesh = SubResource("PlaneMesh_412e7")

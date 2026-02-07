@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://wfs0wqd7336g"]
+
+[ext_resource type="Texture2D" uid="uid://doqwdbmams73t" path="res://model/treeB.png" id="1_brfkd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_brfkd"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("1_brfkd")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nnvrw"]
+
+[node name="Node3D" type="Node3D" unique_id=1314469543]
+transform = Transform3D(1, 0, 0, 0, 1.9195452, 0, 0, 0, 1, 0, 15.577179, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1054573593]
+transform = Transform3D(8.658663, 0, 0, 0, -4.3711392e-08, -4.455403, 0, 0.99999994, -1.9475186e-07, 0, -3.6962876, 0)
+material_override = SubResource("StandardMaterial3D_brfkd")
+mesh = SubResource("PlaneMesh_nnvrw")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1187494222]
+transform = Transform3D(-3.7848218e-07, 0.99999994, -1.9475183e-07, 0, -4.3711385e-08, -4.455403, -8.658663, -4.3711385e-08, -8.642775e-15, 0, -3.696288, 0)
+material_override = SubResource("StandardMaterial3D_brfkd")
+mesh = SubResource("PlaneMesh_nnvrw")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=963653099]
+transform = Transform3D(6.122599, -0.7071067, 1.3771033e-07, 0, -4.3711385e-08, -4.455403, 6.122599, 0.7071067, -1.3771036e-07, 0, -3.696288, 0)
+material_override = SubResource("StandardMaterial3D_brfkd")
+mesh = SubResource("PlaneMesh_nnvrw")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=888454304]
+transform = Transform3D(6.1225986, 0.70710677, -1.3771033e-07, -1.9103934e-21, -4.371139e-08, -4.455403, -6.1225996, 0.70710665, -1.3771034e-07, 0, -3.6962886, 0)
+material_override = SubResource("StandardMaterial3D_brfkd")
+mesh = SubResource("PlaneMesh_nnvrw")
