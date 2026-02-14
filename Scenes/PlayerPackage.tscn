@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://c7psjp33u27si"]
+
+[ext_resource type="Script" uid="uid://1adsqrwom7ia" path="res://Scripts/Player.cs" id="1_sflyd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sflyd"]
+size = Vector3(1, 2.8054428, 0.5498657)
+
+[node name="PlayerPackage" type="Node3D" unique_id=1762938549]
+transform = Transform3D(0.06805016, 0, 0.9976819, 0, 1, 0, -0.9976819, 0, 0.06805016, 0, 0, 0)
+
+[node name="Player" type="CharacterBody3D" parent="." unique_id=1547078811 groups=["player"]]
+transform = Transform3D(1, 0, 0, 0, 0.9998792, 0.015550286, 0, -0.015550286, 0.9998792, 0, 0.33918536, 0)
+script = ExtResource("1_sflyd")
+Speed = 5.0
+Sensitivity = 0.001
+BobFreq = 6.0
+BobAmp = 0.03
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=193374505]
+process_mode = 3
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1384555, -0.079498336)
+shape = SubResource("BoxShape3D_sflyd")
+
+[node name="Camera3D" type="Camera3D" parent="Player" unique_id=544243283]
+transform = Transform3D(1, 0, 0, 0, 0.9961076, 0.088146724, 0, -0.088146724, 0.9961076, 0, 1.9367968, 0.0067931316)
+keep_aspect = 0
+doppler_tracking = 1
+current = true
+fov = 95.3
+far = 3000.0

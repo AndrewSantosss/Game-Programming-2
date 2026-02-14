@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://wxfklfrtg6gs"]
+
+[ext_resource type="Script" uid="uid://dstpx4lxfe0p6" path="res://Scripts/Classmate.cs" id="1_4utk6"]
+[ext_resource type="PackedScene" uid="uid://chfvd2px2gj0f" path="res://Assets/Areas/model/npc/classmate.gltf" id="1_s4uor"]
+
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tuw3o"]
+size = Vector3(5.163949, 1, 5.3660965)
+
+[node name="Classmate" type="Area3D" unique_id=1413380354]
+script = ExtResource("1_4utk6")
+
+[node name="HeadMarker" type="Marker3D" parent="." unique_id=1018461185]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6603537, 0.23674)
+gizmo_extents = 3.61
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1645022098]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3090377, 0.51847875, 2.1830482)
+shape = SubResource("BoxShape3D_tuw3o")
+
+[node name="blockbench_export" parent="." unique_id=1941477631 instance=ExtResource("1_s4uor")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
