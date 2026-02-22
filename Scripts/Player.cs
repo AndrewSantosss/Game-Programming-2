@@ -8,24 +8,16 @@ public partial class Player : CharacterBody3D
     [Export] public float SprintMultiplier = 1.7f;
     [Export] public float Sensitivity = 0.0015f; 
     [Export] public float VerticalSensitivityMultiplier = 0.7f;
-<<<<<<< HEAD
-=======
-    
-    // Smoothing Factors
->>>>>>> e314ab6e2e9f169dd1be36d569ef0a8f2472879b
     [Export] public float Acceleration = 10.0f;
     [Export] public float Friction = 15.0f;
     [Export] public float MouseSmoothing = 20.0f;
 
-<<<<<<< HEAD
     [ExportGroup("Crouch Settings")]
     [Export] public float CrouchSpeed = 1.5f;
     [Export] public float CrouchHeight = 1.0f;
     [Export] public float DefaultHeight = 2.0f; // Matches your collision shape height
     [Export] public float CrouchLerpSpeed = 10.0f;
 
-=======
->>>>>>> e314ab6e2e9f169dd1be36d569ef0a8f2472879b
     [ExportGroup("Camera Dynamics")]
     [Export] public float BobFreq = 2.4f;
     [Export] public float BobAmp = 0.06f;
@@ -36,18 +28,11 @@ public partial class Player : CharacterBody3D
     private float _tBob = 0.0f;
     private float _tIdle = 0.0f;
     private Camera3D _camera;
-<<<<<<< HEAD
     private CollisionShape3D _collisionShape;
 
     private float _targetRotationY;
     private float _targetRotationX;
     private float _currentCameraHeight = 1.93f;
-=======
-
-    // Values for smoothing mouse rotation
-    private float _targetRotationY;
-    private float _targetRotationX;
->>>>>>> e314ab6e2e9f169dd1be36d569ef0a8f2472879b
 
     public float gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
 
@@ -57,10 +42,6 @@ public partial class Player : CharacterBody3D
         _collisionShape = GetNode<CollisionShape3D>("CollisionShape3D");
         Input.MouseMode = Input.MouseModeEnum.Captured;
         
-<<<<<<< HEAD
-=======
-        // Initialize rotation targets to current rotation
->>>>>>> e314ab6e2e9f169dd1be36d569ef0a8f2472879b
         _targetRotationY = Rotation.Y;
         _targetRotationX = _camera.Rotation.X;
 
@@ -177,108 +158,11 @@ public partial class Player : CharacterBody3D
         }
     }
 
-<<<<<<< HEAD
-=======
-    public override void _Input(InputEvent @event)
-    {
-        if (@event is InputEventMouseMotion mouseMotion && !IsLocked)
-        {
-            // Set target rotations based on relative mouse movement
-            _targetRotationY -= mouseMotion.Relative.X * Sensitivity;
-            _targetRotationX -= mouseMotion.Relative.Y * Sensitivity * VerticalSensitivityMultiplier;
-            _targetRotationX = Mathf.Clamp(_targetRotationX, Mathf.DegToRad(-85), Mathf.DegToRad(85));
-        }
-    }
-
-    public override void _PhysicsProcess(double delta)
-    {
-        // 1. Smooth Mouse Movement
-        // Interpolate current rotation toward the target rotation for a silky feel
-        float lerpWeight = (float)delta * MouseSmoothing;
-        Rotation = new Vector3(Rotation.X, Mathf.LerpAngle(Rotation.Y, _targetRotationY, lerpWeight), Rotation.Z);
-        _camera.Rotation = new Vector3(Mathf.LerpAngle(_camera.Rotation.X, _targetRotationX, lerpWeight), _camera.Rotation.Y, _camera.Rotation.Z);
-
-        Vector3 velocity = Velocity;
-
-        // 2. Gravity
-        if (!IsOnFloor()) 
-            velocity.Y -= gravity * (float)delta;
-
-        // 3. Movement Logic
-        if (IsLocked)
-        {
-            // Smoothly slide to a stop when talking
-            velocity.X = Mathf.Lerp(velocity.X, 0, (float)delta * Friction);
-            velocity.Z = Mathf.Lerp(velocity.Z, 0, (float)delta * Friction);
-            Velocity = velocity;
-            MoveAndSlide();
-            HandleCameraMovements(delta, false, Vector3.Zero);
-            return;
-        }
-
-        Vector2 inputDir = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
-        Vector3 direction = (Transform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
-
-        bool isSprinting = Input.IsKeyPressed(Key.Shift);
-        float targetSpeed = isSprinting && direction != Vector3.Zero ? Speed * SprintMultiplier : Speed;
-
-        if (direction != Vector3.Zero)
-        {
-            // Smooth Acceleration
-            velocity.X = Mathf.Lerp(velocity.X, direction.X * targetSpeed, (float)delta * Acceleration);
-            velocity.Z = Mathf.Lerp(velocity.Z, direction.Z * targetSpeed, (float)delta * Acceleration);
-        }
-        else
-        {
-            // Smooth Friction (Deceleration)
-            velocity.X = Mathf.Lerp(velocity.X, 0, (float)delta * Friction);
-            velocity.Z = Mathf.Lerp(velocity.Z, 0, (float)delta * Friction);
-        }
-
-        Velocity = velocity;
-        MoveAndSlide();
-        HandleCameraMovements(delta, isSprinting, direction);
-    }
-
-    private void HandleCameraMovements(double delta, bool isSprinting, Vector3 direction)
-    {
-        Vector3 pos = _camera.Position;
-        float defaultHeight = 1.93f; 
-
-        if (direction != Vector3.Zero && IsOnFloor())
-        {
-            _tBob += (float)delta * Velocity.Length();
-            float cFreq = isSprinting ? BobFreq * 1.4f : BobFreq;
-            float cAmp = isSprinting ? BobAmp * 1.2f : BobAmp;
-            
-            // Interpolate the head bob so it doesn't snap when starting/stopping
-            pos.Y = Mathf.Lerp(pos.Y, defaultHeight + Mathf.Sin(_tBob * cFreq) * cAmp, (float)delta * 10.0f);
-            pos.X = Mathf.Lerp(pos.X, Mathf.Cos(_tBob * cFreq * 0.5f) * cAmp, (float)delta * 10.0f);
-        }
-        else
-        {
-            _tIdle += (float)delta;
-            float breatheEffect = Mathf.Sin(_tIdle * IdleBobFreq) * IdleBobAmp;
-            
-            // Return to center smoothly when idle
-            pos.Y = Mathf.Lerp(pos.Y, defaultHeight + breatheEffect, (float)delta * 5.0f);
-            pos.X = Mathf.Lerp(pos.X, 0.0f, (float)delta * 5.0f);
-        }
-        _camera.Position = pos;
-    }
-
-    // --- Utility Methods ---
-
->>>>>>> e314ab6e2e9f169dd1be36d569ef0a8f2472879b
     public void PanToTarget(Vector3 targetGlobalPos, bool useZoom = false, float zoomFov = 30.0f, float yOffset = 0.0f)
     {
         Vector3 lookDir = (targetGlobalPos - GlobalPosition).Normalized();
         _targetRotationY = Mathf.Atan2(-lookDir.X, -lookDir.Z);
-<<<<<<< HEAD
         _targetRotationX = 0.0f;
-=======
-        _targetRotationX = 0.0f; // Look straight ahead
->>>>>>> e314ab6e2e9f169dd1be36d569ef0a8f2472879b
 
         Tween tween = GetTree().CreateTween().SetParallel(true);
         tween.TweenProperty(this, "rotation:y", _targetRotationY, 0.5f).SetTrans(Tween.TransitionType.Sine);

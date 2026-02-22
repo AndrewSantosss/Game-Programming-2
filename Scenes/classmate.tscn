@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://chfvd2px2gj0f" path="res://Assets/Areas/model/npc/classmate.gltf" id="1_s4uor"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tuw3o"]
-size = Vector3(8.648161, 3.6913834, 4.064948)
+size = Vector3(13.635116, 3.6913834, 17.780426)
 
 [node name="Classmate" type="Area3D" unique_id=1413380354]
 script = ExtResource("1_4utk6")
@@ -14,7 +14,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6603537, 0.23674)
 gizmo_extents = 3.61
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1645022098]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17961407, 2.1612866, -1.7987657)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.123541355, 2.1612866, 0.25090027)
 shape = SubResource("BoxShape3D_tuw3o")
 
 [node name="blockbench_export" parent="." unique_id=1941477631 instance=ExtResource("1_s4uor")]

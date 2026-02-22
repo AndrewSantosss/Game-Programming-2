@@ -45,8 +45,8 @@ public partial class PssTrigger : Area3D
 							player.IsLocked = false; // Release player after the event
 						}));
 					});
-				}; // Timer closure
-			}); // Dialogue closure
+				}; 
+			}); 
 		}
 	}
 }

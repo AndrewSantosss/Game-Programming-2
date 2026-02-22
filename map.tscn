@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://bfkgbyp748t1o"]
 
 [ext_resource type="PackedScene" uid="uid://dftvqwevdbghf" path="res://Assets/Areas/model/lilim.gltf" id="1_rg57b"]
-[ext_resource type="Script" uid="uid://drg2psy057sed" path="res://Scripts/CafeTrigger.cs" id="2_jky6x"]
+[ext_resource type="PackedScene" uid="uid://ch327wj1ou6w7" path="res://Scenes/cafe_ghost.tscn" id="2_jky6x"]
 [ext_resource type="PackedScene" uid="uid://wxfklfrtg6gs" path="res://Scenes/classmate.tscn" id="2_macow"]
+[ext_resource type="Script" uid="uid://jp0ghg1xn7rl" path="res://Scripts/CafeGhostTrigger.cs" id="3_4sf5t"]
 [ext_resource type="PackedScene" uid="uid://cea5x7w3n402f" path="res://Assets/Areas/model/jeep.glb" id="3_ltf6m"]
 [ext_resource type="Texture2D" uid="uid://xe5xf78ipm5o" path="res://Assets/Areas/model/lilim_2.png" id="4_uus22"]
 [ext_resource type="PackedScene" uid="uid://c7psjp33u27si" path="res://Scenes/PlayerPackage.tscn" id="5_tuwt4"]
@@ -22,6 +23,28 @@
 [ext_resource type="PackedScene" uid="uid://dpwq8cfpxdoqt" path="res://Assets/Areas/model/man.gltf" id="19_gg4i5"]
 [ext_resource type="Texture2D" uid="uid://bju05luog0xdw" path="res://Assets/Areas/model/tindahan.jpg" id="20_natfk"]
 [ext_resource type="PackedScene" uid="uid://duovg3vo3475h" path="res://Scenes/Outdoor/sipsipPozonegro.tscn" id="21_y410r"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3mr0t"]
+size = Vector3(1.5842285, 3.102539, 27.492432)
+
+[sub_resource type="CSharpScript" id="CSharpScript_r5om4"]
+script/source = "using Godot;
+using System;
+
+public partial class CafeGhostTrigger : Area3D
+{
+    [Export] public GhostlyFigure TargetGhost;
+    private bool _triggered = false;
+
+    public void _on_body_entered(Node body)
+    {
+        if (body is Player && !_triggered)
+        {
+            _triggered = true;
+            TargetGhost?.TriggerAppearance();
+        }
+    }
+}"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r5om4"]
 size = Vector3(36.325745, 1, 38.33966)
@@ -143,11 +166,21 @@ render_target_update_mode = 4
 [node name="PlayerPackage" parent="SubViewportContainer/SubViewport" unique_id=1762938549 instance=ExtResource("5_tuwt4")]
 transform = Transform3D(0.99992085, 0, 0.012583404, 0, 1, 0, -0.012583404, 0, 0.99992085, 44.10981, 0.41716182, -141.12497)
 
-[node name="CafeGhost" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=194118763]
+[node name="CafeGhost" parent="SubViewportContainer/SubViewport" unique_id=1540978287 instance=ExtResource("2_jky6x")]
+transform = Transform3D(-0.4067367, 0, -0.9135454, 0, 1, 0, 0.9135454, 0, -0.4067367, 31.205507, -1.5706731, 12.863815)
+
+[node name="CafeGhostTrigger" type="Area3D" parent="SubViewportContainer/SubViewport" unique_id=1314653573 node_paths=PackedStringArray("TargetGhost")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1119766, 0, 9.536743e-07)
+script = ExtResource("3_4sf5t")
+TargetGhost = NodePath("../CafeGhost")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/CafeGhostTrigger" unique_id=1383172715]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6567383, 1.0512695, 9.748675)
+shape = SubResource("BoxShape3D_3mr0t")
 
 [node name="CafeTrigger" type="Area3D" parent="SubViewportContainer/SubViewport" unique_id=522645441]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.719599, 0, -3.6280947)
-script = ExtResource("2_jky6x")
+script = SubResource("CSharpScript_r5om4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/CafeTrigger" unique_id=1794176220]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.076998, 0.25501013, 14.456334)
@@ -1763,6 +1796,7 @@ transform = Transform3D(6.2854295, 0, 0, 0, 1, 0, 0, 0, 3.6786923, 8.703463, 0, 
 visible = false
 shape = SubResource("BoxShape3D_w1iwb")
 
+[connection signal="body_entered" from="SubViewportContainer/SubViewport/CafeGhostTrigger" to="SubViewportContainer/SubViewport/CafeGhostTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="SubViewportContainer/SubViewport/OfficeTrigger" to="SubViewportContainer/SubViewport/OfficeTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="SubViewportContainer/SubViewport/PssTrigger" to="SubViewportContainer/SubViewport/PssTrigger" method="_on_body_entered"]
 
