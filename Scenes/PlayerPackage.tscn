@@ -3,10 +3,9 @@
 [ext_resource type="Script" uid="uid://1adsqrwom7ia" path="res://Scripts/Player.cs" id="1_sflyd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sflyd"]
-size = Vector3(1, 2.8054428, 0.5498657)
+size = Vector3(5.658203, 1.4030273, 2.1101074)
 
 [node name="PlayerPackage" type="Node3D" unique_id=1762938549]
-transform = Transform3D(0.9999574, 0, -0.009232748, 0, 1, 0, 0.009232748, 0, 0.9999574, 0, 2, 0)
 
 [node name="Player" type="CharacterBody3D" parent="." unique_id=1547078811 groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 0.9998792, 0.015550286, 0, -0.015550286, 0.9998792, 0, 0.33918536, 0)
@@ -18,11 +17,11 @@ BobAmp = 0.03
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=193374505]
 process_mode = 3
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1384555, -0.079498336)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34159684, 0.8215903, -0.66775566)
 shape = SubResource("BoxShape3D_sflyd")
 
 [node name="Camera3D" type="Camera3D" parent="Player" unique_id=544243283]
-transform = Transform3D(1, 0, 0, 0, 0.9961076, 0.088146724, 0, -0.088146724, 0.9961076, 0, 1.9367968, 0.0067931316)
+transform = Transform3D(1, 0, 0, 0, 0.9961076, 0.088146724, 0, -0.088146724, 0.9961076, 0, 0.37258798, -0.017533714)
 keep_aspect = 0
 doppler_tracking = 1
 current = true

@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://xe5xf78ipm5o" path="res://Assets/Areas/model/lilim_2.png" id="1_qdpgs"]
 [ext_resource type="Texture2D" uid="uid://bkrwnp1r03lsp" path="res://Assets/Areas/model/lilim_1.png" id="2_wg6r1"]
+[ext_resource type="Script" uid="uid://bswmg3p0d6qdk" path="res://Scripts/FlickerLight.cs" id="3_qb3by"]
 [ext_resource type="Texture2D" uid="uid://dyku6qa852ued" path="res://Assets/Areas/model/lilim_0.png" id="3_ymue7"]
-
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y8vuy"]
 albedo_texture = ExtResource("1_qdpgs")
@@ -154,7 +154,7 @@ transform = Transform3D(8.548386, 0, 0, 0, 1.5663222, 0, 0, 0, 9.094917, 71.9019
 material_override = SubResource("StandardMaterial3D_deta0")
 mesh = SubResource("BoxMesh_hgv03")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=711020692]
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=711020692 groups=["flicker_lights"]]
 transform = Transform3D(0.98866487, 6.562798e-09, -0.15013932, 0.15013932, -4.3215913e-08, 0.98866487, 0, -1, -4.371139e-08, 71.785965, 103.67866, 0.83102417)
 layers = 1023
 light_energy = 2.479
@@ -165,8 +165,9 @@ light_specular = 0.0
 shadow_enabled = true
 spot_range = 302.64508
 spot_angle = 56.15103
+script = ExtResource("3_qb3by")
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=1010363289]
+[node name="SpotLight3D2" type="SpotLight3D" parent="." unique_id=1010363289 groups=["flicker_lights"]]
 transform = Transform3D(-0.9999175, -5.6148647e-10, 0.012845314, -0.012845314, 4.3707782e-08, -0.9999175, 0, -1, -4.371139e-08, 71.785965, 88.5854, -0.712553)
 layers = 1023
 light_energy = 1000.0
@@ -188,7 +189,7 @@ transform = Transform3D(8.548386, 0, 0, 0, 1.5663222, 0, 0, 0, 9.094917, 71.9019
 material_override = SubResource("StandardMaterial3D_p6qol")
 mesh = SubResource("BoxMesh_hgv03")
 
-[node name="SpotLight3D3" type="SpotLight3D" parent="." unique_id=436310280]
+[node name="SpotLight3D3" type="SpotLight3D" parent="." unique_id=436310280 groups=["flicker_lights"]]
 transform = Transform3D(0.99115545, 5.8007714e-09, -0.13270618, 0.13270618, -4.3324782e-08, 0.99115545, 0, -1, -4.371139e-08, 71.785965, 103.67866, -373.00952)
 layers = 1023
 light_energy = 0.0
@@ -200,7 +201,7 @@ shadow_enabled = true
 spot_range = 246.85258
 spot_angle = 62.108833
 
-[node name="SpotLight3D4" type="SpotLight3D" parent="." unique_id=2017426780]
+[node name="SpotLight3D4" type="SpotLight3D" parent="." unique_id=2017426780 groups=["flicker_lights"]]
 transform = Transform3D(-0.9999175, -5.6148647e-10, 0.012845314, -0.012845314, 4.3707782e-08, -0.9999175, 0, -1, -4.371139e-08, 71.785965, 88.5854, -374.5531)
 layers = 1023
 light_energy = 1000.0
