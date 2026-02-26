@@ -20,4 +20,6 @@ shape = SubResource("BoxShape3D_tuw3o")
 [node name="blockbench_export" parent="." unique_id=1941477631 instance=ExtResource("1_s4uor")]
 transform = Transform3D(-2, 0, -3.019916e-07, 0, 2, 0, 3.019916e-07, 0, -2, 0, 0, 0)
 
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=352101311]
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
