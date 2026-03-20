@@ -9,7 +9,7 @@ public partial class GhostlyFigure : Node3D
 
     public override void _Ready()
     {
-        Hide(); // Start hidden
+        Hide(); // <--- This line makes it invisible at the start!
         _playerCamera = GetViewport().GetCamera3D();
     }
 

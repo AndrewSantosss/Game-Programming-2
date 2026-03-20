@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dwhwssn3r2v24"
+path="res://.godot/imported/Springlock Failure Tape.mp3-c97cddccf8179d934c3f1a33bcb95ab8.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Springlock Failure Tape.mp3"
+dest_files=["res://.godot/imported/Springlock Failure Tape.mp3-c97cddccf8179d934c3f1a33bcb95ab8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

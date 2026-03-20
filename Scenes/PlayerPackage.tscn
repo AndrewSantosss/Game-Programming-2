@@ -27,3 +27,8 @@ doppler_tracking = 1
 current = true
 fov = 95.3
 far = 3000.0
+
+[node name="RayCast3D" type="RayCast3D" parent="Player/Camera3D" unique_id=1682978821]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.22002369, 0.022923551)
+target_position = Vector3(0, 0, -3)
+collide_with_areas = true

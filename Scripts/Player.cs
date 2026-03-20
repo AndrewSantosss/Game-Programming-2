@@ -92,6 +92,22 @@ public partial class Player : CharacterBody3D
             box.Size = size;
         }
 
+        // Add inside _PhysicsProcess in Player.cs
+        // Inside Player.cs -> _PhysicsProcess
+        if (Input.IsActionJustPressed("interact")) // Make sure "interact" is mapped to 'E' in Project Settings
+        {
+            // Try to find the RayCast3D we added to the Camera
+            var ray = GetNodeOrNull<RayCast3D>("Camera3D/RayCast3D");
+            
+            if (ray != null && ray.IsColliding())
+            {
+                var collider = ray.GetCollider();
+                if (collider is CafeInteractable station)
+                {
+                    station.OnInteract();
+                }
+            }
+        }
         // Adjust Camera Base Height based on Crouch
         float targetCamHeight = isCrouching ? 0.9f : 1.93f; 
         _currentCameraHeight = Mathf.Lerp(_currentCameraHeight, targetCamHeight, (float)delta * CrouchLerpSpeed);
@@ -144,17 +160,56 @@ public partial class Player : CharacterBody3D
         _camera.Position = pos;
     }
 
+    private void HandleInteraction()
+    {
+        if (Input.IsActionJustPressed("interact"))
+        {
+            var ray = GetNodeOrNull<RayCast3D>("Camera3D/RayCast3D"); 
+            
+            if (ray != null && ray.IsColliding())
+            {
+                // CHANGE: Cast the collider to a Node so we can read its Name
+                var collider = ray.GetCollider();
+                
+                if (collider is Node hitNode)
+                {
+                    GD.Print("Ray hit: " + hitNode.Name);
+                }
+
+                // Check if the hit object is our cafe interactable script
+                if (collider is CafeInteractable workStation)
+                {
+                    workStation.OnInteract();
+                }
+            }
+        }
+    }
+
     // --- Helper for Dialogue Spawn ---
     private void StartSpawnDialogue()
     {
         var dialogue = GetNodeOrNull<DialogueManager>("/root/DialogueManager");
-        if (dialogue != null)
+        if (dialogue == null) return;
+
+        // Checks the name of the Scene's Root Node
+        string sceneName = GetTree().CurrentScene.Name;
+
+        if (sceneName == "map" || sceneName == "CafeWork" || sceneName == "cafework") 
         {
-            PanToTarget(GlobalPosition + Transform.Basis.Z * -3.0f, true, 30.0f, 0.0f);
+            // Plays the original Cafe dialogue
+            PanToTarget(GlobalPosition + Transform.Basis.Z * -1.0f + Vector3.Down * 0.5f, true, 45.0f);
             dialogue.StartDialogue(new string[] { 
-                "Sa wakas natapos din yung practice na yan, ginabi na ako...",
-                "Makakapag pahinga na rin ako."
+                "John: (Sigh) 11:30 PM na... wala pa ring reply. Lowbat pa yata ako.",
+                "John: Galing talagang timing. Kailangan ko na makauwi bago mawalan ng masakyan."
             }, () => ResetCamera());
+        }
+        else if (sceneName == "Run" || sceneName == "map_night")
+        {
+            // Plays the Night walk dialogue
+            dialogue.StartDialogue(new string[] { 
+                "John: The fog is so thick tonight...",
+                "John: I can barely see the road. I need to find the bus stop and get out of here."
+            });
         }
     }
 
@@ -203,4 +258,18 @@ public partial class Player : CharacterBody3D
         tween.TweenProperty(_camera, "rotation:z", Mathf.DegToRad(-4), 0.04f);
         tween.TweenProperty(_camera, "rotation:z", 0.0f, 0.04f);
     }
+    public void LookLeftRight(float intensity = 0.5f, float duration = 0.4f)
+    {
+        float startRotation = _targetRotationY;
+        Tween tween = GetTree().CreateTween();
+        
+        // Look Left
+        tween.TweenProperty(this, "_targetRotationY", startRotation + intensity, duration).SetTrans(Tween.TransitionType.Sine);
+        // Look Right
+        tween.TweenProperty(this, "_targetRotationY", startRotation - intensity, duration * 2).SetTrans(Tween.TransitionType.Sine);
+        // Return to Center
+        tween.TweenProperty(this, "_targetRotationY", startRotation, duration).SetTrans(Tween.TransitionType.Sine);
+    }
+
+    
 }

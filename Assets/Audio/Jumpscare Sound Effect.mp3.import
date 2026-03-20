@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cxxjcwy6hwc5"
+path="res://.godot/imported/Jumpscare Sound Effect.mp3-fd17d44b85eba50c8c337a84e889ca8a.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Jumpscare Sound Effect.mp3"
+dest_files=["res://.godot/imported/Jumpscare Sound Effect.mp3-fd17d44b85eba50c8c337a84e889ca8a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bnmucord015ka"
+path="res://.godot/imported/Wind in Trees Sound Effects - Leaves Rustling in Forest.mp3-58d966a0eeddaa0b0c8750b02a9b2949.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Wind in Trees Sound Effects - Leaves Rustling in Forest.mp3"
+dest_files=["res://.godot/imported/Wind in Trees Sound Effects - Leaves Rustling in Forest.mp3-58d966a0eeddaa0b0c8750b02a9b2949.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

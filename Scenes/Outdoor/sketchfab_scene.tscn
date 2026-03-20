@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b5r4n38lj53dt"]
+
+[ext_resource type="PackedScene" uid="uid://c2eh851rjfaqn" path="res://Assets/Areas/model/vr_store.glb" id="1_cwftj"]
+
+[node name="711" unique_id=18746407 instance=ExtResource("1_cwftj")]
+
+[node name="Object_109" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(1386067813) index="107" unique_id=1041949369]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13700247, -0.26524305, 0.5154866)
