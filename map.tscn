@@ -206,6 +206,7 @@ environment = SubResource("Environment_w1iwb")
 script = ExtResource("16_wcnou")
 
 [node name="ColorRect" type="ColorRect" parent="SubViewportContainer/SubViewport/CanvasLayer" unique_id=1106636325]
+visible = false
 anchors_preset = -1
 anchor_right = 0.9207921
 anchor_bottom = 0.12411348

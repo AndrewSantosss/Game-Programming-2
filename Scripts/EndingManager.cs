@@ -62,13 +62,13 @@ public partial class EndingManager : Node3D
             if (StalkerSpawnPoint != null)
                 ghost.GlobalPosition = StalkerSpawnPoint.GlobalPosition;
             else
-                ghost.GlobalPosition = player.GlobalPosition + (player.Transform.Basis.Z * 2.5f);
+                ghost.GlobalPosition = player.GlobalPosition + (player.Transform.Basis.Z * 2.5f); 
 
             // 4. Make sure it faces the player
             ghost.LookAt(player.GlobalPosition);
             
             // 5. Force the player to look at the ghost
-            player.PanToTarget(ghost.GlobalPosition, true, 30.0f);
+            player.PanToTarget(ghost.GlobalP, true, 30.0f);
 
             // 6. The Scare Timer
                 GetTree().CreateTimer(0.8f).Timeout += () => {

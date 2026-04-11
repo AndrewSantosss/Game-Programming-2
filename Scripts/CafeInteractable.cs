@@ -5,7 +5,7 @@ public partial class CafeInteractable : Area3D
 {
     [Export] public GhostlyFigure StalkerAtWindow;
     [Export] public int OrdersToComplete = 3;
-    
+     
     private int _currentOrders = 0;
     private bool _isBusy = false;
 
@@ -20,7 +20,7 @@ public partial class CafeInteractable : Area3D
 
         GetTree().CreateTimer(2.0f).Timeout += () => {
             _currentOrders++;
-            _isBusy = false;
+            _isBusy = false;  
 
             if (_currentOrders == 1)
             {
@@ -36,7 +36,7 @@ public partial class CafeInteractable : Area3D
                 GetTree().CreateTimer(5.0f).Timeout += () => {
                     if (IsInstanceValid(StalkerAtWindow))
                     {
-                        StalkerAtWindow.Visible = false;
+                        StalkerAtWindow.Visible = false;   
                     }
                 };
             }
