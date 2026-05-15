@@ -37,8 +37,7 @@ texture_filter = 0
 [sub_resource type="PlaneMesh" id="PlaneMesh_wijl4"]
 
 [sub_resource type="Environment" id="Environment_w1iwb"]
-background_mode = 1
-background_color = Color(0.054058246, 0.057191648, 0.09345231, 1)
+background_color = Color(2.0214916e-06, 0.70024395, 0.5924044, 1)
 background_energy_multiplier = 2.93
 ambient_light_color = Color(1, 1, 1, 1)
 glow_enabled = true
@@ -189,15 +188,15 @@ mesh = SubResource("PlaneMesh_wijl4")
 skeleton = NodePath("../../..")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=809946170]
-transform = Transform3D(0.8874989, -0.41250083, 0.20539987, -0.19673906, -0.7422567, -0.64058495, 0.41670105, 0.5281079, -0.73990726, 0, 10.4601555, 0)
-light_energy = 0.0
+transform = Transform3D(-0.44604442, 0.8280042, 0.33978435, 0.79208887, 0.1884428, 0.5805899, 0.4167011, 0.5281081, -0.7399068, 0, 10.4601555, 0)
+light_energy = 3.01
 light_indirect_energy = 0.0
 light_angular_distance = 4.02
 light_specular = 0.0
 shadow_enabled = true
-shadow_bias = 0.0
 shadow_normal_bias = 0.0
-shadow_blur = 1.198
+shadow_opacity = 0.92
+shadow_blur = 0.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewportContainer/SubViewport" unique_id=1929621246]
 environment = SubResource("Environment_w1iwb")
@@ -255,11 +254,10 @@ transform = Transform3D(11.111553, 0, 0, 0, 1, 0, 0, 0, 12.291154, 0, -0.9486429
 [node name="blockbench_export" parent="SubViewportContainer/SubViewport/man" unique_id=1090943879 instance=ExtResource("19_gg4i5")]
 transform = Transform3D(-0.04266702, 0, 0.11392628, 0, 1.4423325, 0, -0.068366416, 0, -0.07110058, -0.63406897, 0.4401312, -3.484282)
 
-[node name="PssTrigger" type="Area3D" parent="SubViewportContainer/SubViewport" unique_id=1246218357 node_paths=PackedStringArray("ManNode", "LookAtCorner")]
+[node name="PssTrigger" type="Area3D" parent="SubViewportContainer/SubViewport" unique_id=1246218357 node_paths=PackedStringArray("ManNode")]
 transform = Transform3D(18.171848, 0, 0, 0, 1, 0, 0, 0, 12.291154, 2.7250395, -0.94864297, -76.41104)
 script = ExtResource("18_pmuo0")
 ManNode = NodePath("../man")
-LookAtCorner = NodePath("../LookAtTarget")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/PssTrigger" unique_id=972955824]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3198853, 0)
@@ -319,26 +317,9 @@ max_distance = 101.95
 [node name="Node3D" parent="SubViewportContainer/SubViewport" unique_id=19198192 instance=ExtResource("21_y410r")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.795906, 1.9520245, -104.41136)
 
-[node name="post10" parent="SubViewportContainer/SubViewport" unique_id=2044783963 instance=ExtResource("14_cwq17")]
-transform = Transform3D(0.05348463, 0, -9.384101e-09, 0, 0.061628114, 0, 1.034431e-08, 0, 0.059368484, -5.809637, 1.2118528, -103.00427)
-
-[node name="post5" parent="SubViewportContainer/SubViewport" unique_id=672842124 instance=ExtResource("14_cwq17")]
-transform = Transform3D(-0.05348463, 0, 4.6920503e-09, 0, 0.061628114, 0, -5.1721547e-09, 0, -0.059368484, 10.026991, 1.2118528, -33.406242)
-
-[node name="post6" parent="SubViewportContainer/SubViewport" unique_id=1467585001 instance=ExtResource("14_cwq17")]
-transform = Transform3D(-0.05348463, 0, 4.6920503e-09, 0, 0.061628114, 0, -5.1721547e-09, 0, -0.059368484, 10.026991, 1.2118528, 29.91766)
-
-[node name="post7" parent="SubViewportContainer/SubViewport" unique_id=573408302 instance=ExtResource("14_cwq17")]
-transform = Transform3D(0.05348463, 0, -9.384101e-09, 0, 0.061628114, 0, 1.034431e-08, 0, 0.059368484, -5.809637, 1.2118528, -2.028679)
-
-[node name="post8" parent="SubViewportContainer/SubViewport" unique_id=1020007392 instance=ExtResource("14_cwq17")]
-transform = Transform3D(0.05348463, 0, -9.384101e-09, 0, 0.061628114, 0, 1.034431e-08, 0, 0.059368484, -5.809637, 1.2118528, -64.07813)
-
-[node name="post9" parent="SubViewportContainer/SubViewport" unique_id=2086873365 instance=ExtResource("14_cwq17")]
-transform = Transform3D(7.510042e-09, 0, 0.059368484, 0, 0.061628114, 0, -0.05348463, 0, 7.2871296e-09, 31.97648, 1.2118528, -137.44159)
-
 [node name="trees" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=902730286]
 transform = Transform3D(11.111553, 0, 0, 0, 1, 0, 0, 0, 12.291154, 0, -0.94864297, 0)
+visible = false
 
 [node name="Node3D" parent="SubViewportContainer/SubViewport/trees" unique_id=1314469543 instance=ExtResource("7_8cxpi")]
 transform = Transform3D(0.07527208, 0, 0, 0, 1.3457538, 0, 0, 0, 0.07412881, 1.2040595, 11.286524, 2.9376817)
@@ -1714,18 +1695,6 @@ material_override = SubResource("StandardMaterial3D_a6rn7")
 mesh = SubResource("BoxMesh_gqbix")
 skeleton = NodePath("../../../..")
 
-[node name="post2" parent="SubViewportContainer/SubViewport" unique_id=1625440065 instance=ExtResource("14_cwq17")]
-transform = Transform3D(-0.05348463, 0, 4.6920503e-09, 0, 0.061628114, 0, -5.1721547e-09, 0, -0.059368484, 10.026991, 1.2118528, -137.44159)
-
-[node name="post11" parent="SubViewportContainer/SubViewport" unique_id=1485134974 instance=ExtResource("14_cwq17")]
-transform = Transform3D(0.053476136, 0, -0.0010578828, 0, 0.061628114, 0, 0.00095303985, 0, 0.059359055, -4.976076, 0.42964828, -158.08167)
-
-[node name="post3" parent="SubViewportContainer/SubViewport" unique_id=967760860 instance=ExtResource("14_cwq17")]
-transform = Transform3D(-0.05348463, 0, 4.6920503e-09, 0, 0.061628114, 0, -5.1721547e-09, 0, -0.059368484, 10.026991, 1.2118528, -77.838844)
-
-[node name="post4" parent="SubViewportContainer/SubViewport" unique_id=1179104795 instance=ExtResource("14_cwq17")]
-transform = Transform3D(-0.05348463, 0, 4.6920503e-09, 0, 0.061628114, 0, -5.1721547e-09, 0, -0.059368484, 10.026991, 1.2118528, -55.610764)
-
 [node name="wall2" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=399868249]
 transform = Transform3D(11.111553, 0, 0, 0, 1, 0, 0, 0, 12.291154, 0, -0.94864297, 0)
 
@@ -1791,6 +1760,39 @@ light_energy = 3.715
 distance_fade_enabled = true
 spot_range = 19.714891
 spot_angle = 82.97756
+
+[node name="post" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1051420465]
+visible = false
+
+[node name="post10" parent="SubViewportContainer/SubViewport/post" unique_id=672842124 instance=ExtResource("14_cwq17")]
+transform = Transform3D(0.05348463, 0, -9.384101e-09, 0, 0.061628114, 0, 1.034431e-08, 0, 0.059368484, -5.809637, 1.2118528, -103.00427)
+
+[node name="post5" parent="SubViewportContainer/SubViewport/post" unique_id=65998941 instance=ExtResource("14_cwq17")]
+transform = Transform3D(-0.05348463, 0, 4.6920503e-09, 0, 0.061628114, 0, -5.1721547e-09, 0, -0.059368484, 10.026991, 1.2118528, -33.406242)
+
+[node name="post6" parent="SubViewportContainer/SubViewport/post" unique_id=1323432513 instance=ExtResource("14_cwq17")]
+transform = Transform3D(-0.05348463, 0, 4.6920503e-09, 0, 0.061628114, 0, -5.1721547e-09, 0, -0.059368484, 10.026991, 1.2118528, 29.91766)
+
+[node name="post7" parent="SubViewportContainer/SubViewport/post" unique_id=715920479 instance=ExtResource("14_cwq17")]
+transform = Transform3D(0.05348463, 0, -9.384101e-09, 0, 0.061628114, 0, 1.034431e-08, 0, 0.059368484, -5.809637, 1.2118528, -2.028679)
+
+[node name="post8" parent="SubViewportContainer/SubViewport/post" unique_id=1336959888 instance=ExtResource("14_cwq17")]
+transform = Transform3D(0.05348463, 0, -9.384101e-09, 0, 0.061628114, 0, 1.034431e-08, 0, 0.059368484, -5.809637, 1.2118528, -64.07813)
+
+[node name="post9" parent="SubViewportContainer/SubViewport/post" unique_id=1736717571 instance=ExtResource("14_cwq17")]
+transform = Transform3D(7.510042e-09, 0, 0.059368484, 0, 0.061628114, 0, -0.05348463, 0, 7.2871296e-09, 31.97648, 1.2118528, -137.44159)
+
+[node name="post2" parent="SubViewportContainer/SubViewport/post" unique_id=1587735649 instance=ExtResource("14_cwq17")]
+transform = Transform3D(-0.05348463, 0, 4.6920503e-09, 0, 0.061628114, 0, -5.1721547e-09, 0, -0.059368484, 10.026991, 1.2118528, -137.44159)
+
+[node name="post11" parent="SubViewportContainer/SubViewport/post" unique_id=1147106797 instance=ExtResource("14_cwq17")]
+transform = Transform3D(0.053476136, 0, -0.0010578828, 0, 0.061628114, 0, 0.00095303985, 0, 0.059359055, -4.976076, 0.42964828, -158.08167)
+
+[node name="post3" parent="SubViewportContainer/SubViewport/post" unique_id=795207670 instance=ExtResource("14_cwq17")]
+transform = Transform3D(-0.05348463, 0, 4.6920503e-09, 0, 0.061628114, 0, -5.1721547e-09, 0, -0.059368484, 10.026991, 1.2118528, -77.838844)
+
+[node name="post4" parent="SubViewportContainer/SubViewport/post" unique_id=1866971485 instance=ExtResource("14_cwq17")]
+transform = Transform3D(-0.05348463, 0, 4.6920503e-09, 0, 0.061628114, 0, -5.1721547e-09, 0, -0.059368484, 10.026991, 1.2118528, -55.610764)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1998087348]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.535095, -1.0789068, -84.25635)
