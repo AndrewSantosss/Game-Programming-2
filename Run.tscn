@@ -88,8 +88,8 @@ size = Vector3(127.07019, 1, 268.5127)
 
 [node name="map" type="StaticBody3D" unique_id=2128084856 node_paths=PackedStringArray("StalkerSpawnPoint", "HorrorStinger")]
 script = ExtResource("1_cgegw")
-StalkerSpawnPoint = NodePath("SubViewportContainer/SubViewport/Marker3D")
 GhostScene = ExtResource("3_mbll2")
+StalkerSpawnPoint = NodePath("SubViewportContainer/SubViewport/Marker3D")
 HorrorStinger = NodePath("SubViewportContainer/SubViewport/AudioStreamPlayer3D")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=558519148]
