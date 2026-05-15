@@ -4,34 +4,36 @@
 [ext_resource type="PackedScene" uid="uid://ch327wj1ou6w7" path="res://Scenes/cafe_ghost.tscn" id="2_jky6x"]
 [ext_resource type="PackedScene" uid="uid://wxfklfrtg6gs" path="res://Scenes/classmate.tscn" id="2_macow"]
 [ext_resource type="Script" uid="uid://jp0ghg1xn7rl" path="res://Scripts/CafeGhostTrigger.cs" id="3_4sf5t"]
-[ext_resource type="PackedScene" uid="uid://cea5x7w3n402f" path="res://Assets/Areas/model/jeep.glb" id="3_ltf6m"]
-[ext_resource type="Texture2D" uid="uid://xe5xf78ipm5o" path="res://Assets/Areas/model/lilim_2.png" id="4_uus22"]
 [ext_resource type="PackedScene" uid="uid://c7psjp33u27si" path="res://Scenes/PlayerPackage.tscn" id="5_tuwt4"]
+[ext_resource type="Texture2D" uid="uid://78m4bxbkweft" path="res://Assets/Areas/model/dirt-floor-texture-pebbles-179687192.webp" id="5_y1wlr"]
 [ext_resource type="Texture2D" uid="uid://crkytrxjbta4d" path="res://Assets/Areas/model/road.jpg" id="6_1ye5v"]
 [ext_resource type="PackedScene" uid="uid://wfs0wqd7336g" path="res://Scenes/Outdoor/tree.tscn" id="7_8cxpi"]
-[ext_resource type="Texture2D" uid="uid://bdojvhf4h88jy" path="res://Assets/Areas/model/sidewalk.jpg" id="8_wpvg5"]
 [ext_resource type="Texture2D" uid="uid://ccu10kfgivrml" path="res://Assets/Areas/model/schoolWall.jpg" id="9_078fj"]
 [ext_resource type="Texture2D" uid="uid://bl6bc5uxjwjou" path="res://Assets/Areas/model/school.png" id="10_unquq"]
 [ext_resource type="Texture2D" uid="uid://bkrwnp1r03lsp" path="res://Assets/Areas/model/lilim_1.png" id="11_pptwf"]
 [ext_resource type="Texture2D" uid="uid://qhghq58h8dgd" path="res://Assets/Areas/model/Horror_Floor_06-128x128.png" id="12_ak4ow"]
 [ext_resource type="AudioStream" uid="uid://dwhwssn3r2v24" path="res://Assets/Audio/Springlock Failure Tape.mp3" id="13_3mr0t"]
 [ext_resource type="Script" uid="uid://dyvjy4mt84scv" path="res://Scripts/TindahanAudio.cs" id="13_6sq2s"]
-[ext_resource type="Texture2D" uid="uid://dyku6qa852ued" path="res://Assets/Areas/model/lilim_0.png" id="13_ajvq6"]
 [ext_resource type="PackedScene" uid="uid://dpxfggii4fmub" path="res://Scenes/post.tscn" id="14_cwq17"]
 [ext_resource type="Texture2D" uid="uid://didc88chgp26i" path="res://Assets/Areas/model/Horror_Stone_12-128x128.png" id="15_a0h6a"]
+[ext_resource type="PackedScene" uid="uid://b4hg8w7vryhwr" path="res://Assets/Areas/model/old_concete_building_pack__lowpoly.glb" id="16_n2jt6"]
 [ext_resource type="Script" uid="uid://h7rr2bhvfbid" path="res://Scripts/DialogueManager.cs" id="16_wcnou"]
 [ext_resource type="Script" uid="uid://nj601x34n7f2" path="res://Scripts/OfficeTrigger.cs" id="17_1xwpj"]
+[ext_resource type="PackedScene" uid="uid://hrctldu2wtx7" path="res://Assets/Areas/model/lowpoly_shed.glb" id="17_h75vw"]
 [ext_resource type="Script" uid="uid://dhnow6mrljpx5" path="res://Scripts/PssTrigger.cs" id="18_pmuo0"]
 [ext_resource type="PackedScene" uid="uid://dpwq8cfpxdoqt" path="res://Assets/Areas/model/man.gltf" id="19_gg4i5"]
 [ext_resource type="Texture2D" uid="uid://bju05luog0xdw" path="res://Assets/Areas/model/tindahan.jpg" id="20_natfk"]
 [ext_resource type="PackedScene" uid="uid://duovg3vo3475h" path="res://Scenes/Outdoor/sipsipPozonegro.tscn" id="21_y410r"]
+[ext_resource type="Texture2D" uid="uid://cn2osv7m5o3p7" path="res://Assets/Areas/model/177-highway-road-pbr-texture-seamless.jpg" id="23_7vxqa"]
+[ext_resource type="PackedScene" uid="uid://f8htyd35epsl" path="res://Assets/Areas/model/lowpoly_gas_station.glb" id="26_qw8h8"]
+[ext_resource type="PackedScene" uid="uid://df2ivn768iuce" path="res://Assets/Areas/model/3d  house.glb" id="27_meq34"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3mr0t"]
 size = Vector3(1.5842285, 3.102539, 32)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p5pve"]
-albedo_texture = ExtResource("4_uus22")
-uv1_scale = Vector3(100, 80, 18)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yy28u"]
+albedo_texture = ExtResource("5_y1wlr")
+uv1_scale = Vector3(60, 60, 1)
 texture_filter = 0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_wijl4"]
@@ -42,7 +44,6 @@ background_energy_multiplier = 2.93
 ambient_light_color = Color(1, 1, 1, 1)
 glow_enabled = true
 glow_bloom = 0.12
-fog_enabled = true
 fog_light_color = Color(0.060948357, 0.06935282, 0.08406224, 1)
 volumetric_fog_density = 0.04
 
@@ -70,11 +71,6 @@ texture_filter = 0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4v3wx"]
 size = Vector3(1, 3.4747314, 1.0600586)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_05x41"]
-albedo_texture = ExtResource("8_wpvg5")
-uv1_scale = Vector3(30, 2, 1)
-texture_filter = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oysan"]
 albedo_texture = ExtResource("9_078fj")
@@ -106,25 +102,22 @@ texture_filter = 0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_2wwcf"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wbpbn"]
-albedo_texture = ExtResource("6_1ye5v")
-uv1_scale = Vector3(15, 1, 1)
-texture_filter = 0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a6rn7"]
-albedo_texture = ExtResource("13_ajvq6")
-uv1_scale = Vector3(2, 1, 1)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4on3e"]
 albedo_texture = ExtResource("15_a0h6a")
 uv1_scale = Vector3(70, 1, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_urblq"]
-albedo_texture = ExtResource("6_1ye5v")
-uv1_scale = Vector3(1, 50, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a454a"]
+albedo_texture = ExtResource("23_7vxqa")
+uv1_scale = Vector3(40, 1, 1)
 texture_filter = 0
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_iw27f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_urblq"]
+albedo_color = Color(0.6101479, 0.5804964, 0.533901, 1)
+albedo_texture = ExtResource("6_1ye5v")
+uv1_scale = Vector3(8, 5, 1)
+texture_filter = 0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4sf5t"]
 margin = 0.0
@@ -176,20 +169,14 @@ PlayerSeatTarget = NodePath("../PlayerSeatTarget")
 PauwiTarget = NodePath("../PauwiTarget")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=1231542296]
-transform = Transform3D(586.4986, 0, 0, 0, 0.74310964, 0, 0, 0, 492.5273, -592.1347, -0.94864297, 0)
-material_override = SubResource("StandardMaterial3D_p5pve")
-mesh = SubResource("PlaneMesh_wijl4")
-skeleton = NodePath("../../..")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=606807420]
-transform = Transform3D(583.2769, 0, 0, 0, 0.74310964, 0, 0, 0, 492.5273, 580.0529, -0.94864297, 0)
-material_override = SubResource("StandardMaterial3D_p5pve")
+transform = Transform3D(586.4986, 0, 0, 0, 0.74310964, 0, 0, 0, 492.5273, -588.9061, -0.94864297, 0)
+material_override = SubResource("StandardMaterial3D_yy28u")
 mesh = SubResource("PlaneMesh_wijl4")
 skeleton = NodePath("../../..")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=809946170]
-transform = Transform3D(-0.44604442, 0.8280042, 0.33978435, 0.79208887, 0.1884428, 0.5805899, 0.4167011, 0.5281081, -0.7399068, 0, 10.4601555, 0)
-light_energy = 3.01
+transform = Transform3D(-0.87677824, 0.44841835, -0.173726, 0.24004169, 0.7211258, 0.6498903, 0.4167011, 0.5281082, -0.7399067, 0, 10.4601555, 0)
+light_energy = 1.944
 light_indirect_energy = 0.0
 light_angular_distance = 4.02
 light_specular = 0.0
@@ -314,21 +301,14 @@ transform = Transform3D(0.08999642, 0, 0, 0, 1, 0, 0, 0, 0.08135933, -11.735739,
 stream = ExtResource("13_3mr0t")
 max_distance = 101.95
 
-[node name="Node3D" parent="SubViewportContainer/SubViewport" unique_id=19198192 instance=ExtResource("21_y410r")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.795906, 1.9520245, -104.41136)
-
 [node name="trees" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=902730286]
 transform = Transform3D(11.111553, 0, 0, 0, 1, 0, 0, 0, 12.291154, 0, -0.94864297, 0)
-visible = false
 
 [node name="Node3D" parent="SubViewportContainer/SubViewport/trees" unique_id=1314469543 instance=ExtResource("7_8cxpi")]
 transform = Transform3D(0.07527208, 0, 0, 0, 1.3457538, 0, 0, 0, 0.07412881, 1.2040595, 11.286524, 2.9376817)
 
 [node name="Node3D2" parent="SubViewportContainer/SubViewport/trees" unique_id=34987737 instance=ExtResource("7_8cxpi")]
 transform = Transform3D(0.112203114, 0, 0, 0, 2.098706, 0, 0, 0, 0.10011202, 1.890961, 16.566498, 3.7685115)
-
-[node name="Node3D3" parent="SubViewportContainer/SubViewport/trees" unique_id=1153733784 instance=ExtResource("7_8cxpi")]
-transform = Transform3D(0.07527208, 0, 0, 0, 1.3457538, 0, 0, 0, 0.07412881, 0.93145734, 11.286524, 4.1124516)
 
 [node name="Node3D4" parent="SubViewportContainer/SubViewport/trees" unique_id=771154941 instance=ExtResource("7_8cxpi")]
 transform = Transform3D(0.07527208, 0, 0, 0, 1.3457538, 0, 0, 0, 0.07412881, 1.8372202, 11.286524, 4.91534)
@@ -419,9 +399,6 @@ transform = Transform3D(0.112203114, 0, 0, 0, 2.098706, 0, 0, 0, 0.10011202, 1.9
 
 [node name="Node3D33" parent="SubViewportContainer/SubViewport/trees" unique_id=2140873785 instance=ExtResource("7_8cxpi")]
 transform = Transform3D(0.07527208, 0, 0, 0, 1.3457538, 0, 0, 0, 0.07412881, 1.3762112, 11.286524, -1.472941)
-
-[node name="Node3D34" parent="SubViewportContainer/SubViewport/trees" unique_id=1169245729 instance=ExtResource("7_8cxpi")]
-transform = Transform3D(0.07527208, 0, 0, 0, 1.3457538, 0, 0, 0, 0.07412881, 1.8704557, 11.286524, -0.6700528)
 
 [node name="Node3D35" parent="SubViewportContainer/SubViewport/trees" unique_id=1978751463 instance=ExtResource("7_8cxpi")]
 transform = Transform3D(0.112203114, 0, 0, 0, 2.098706, 0, 0, 0, 0.10011202, 2.2155788, 16.566498, -3.0966015)
@@ -765,29 +742,11 @@ transform = Transform3D(0.060868096, 0, 0, 0, 0.35246286, 0, 0, 0, 0.030924715, 
 [node name="Node3D148" parent="SubViewportContainer/SubViewport/trees" unique_id=1444106581 instance=ExtResource("7_8cxpi")]
 transform = Transform3D(0.07526616, 0, -0.0009302119, 0, 1.3457538, 0, 0.0009445584, 0, 0.07412297, -5.7321625, 11.286524, 2.910802)
 
-[node name="Node3D149" parent="SubViewportContainer/SubViewport/trees" unique_id=1896068767 instance=ExtResource("7_8cxpi")]
-transform = Transform3D(0.112194285, 0, -0.0012562645, 0, 2.098706, 0, 0.0014079906, 0, 0.10010414, -5.0568476, 16.566498, 3.749359)
-
-[node name="Node3D150" parent="SubViewportContainer/SubViewport/trees" unique_id=1056053646 instance=ExtResource("7_8cxpi")]
-transform = Transform3D(0.07526616, 0, -0.0009302119, 0, 1.3457538, 0, 0.0009445584, 0, 0.07412297, -6.0210495, 11.286524, 4.082387)
-
-[node name="Node3D151" parent="SubViewportContainer/SubViewport/trees" unique_id=1981207258 instance=ExtResource("7_8cxpi")]
-transform = Transform3D(0.07526616, 0, -0.0009302119, 0, 1.3457538, 0, 0.0009445584, 0, 0.07412297, -5.126503, 11.286524, 4.8954873)
-
 [node name="Node3D152" parent="SubViewportContainer/SubViewport/trees" unique_id=445157694 instance=ExtResource("7_8cxpi")]
 transform = Transform3D(0.112194285, 0, -0.0012562645, 0, 2.098706, 0, 0.0014079906, 0, 0.10010414, -4.747726, 16.566498, 2.4730449)
 
 [node name="Node3D153" parent="SubViewportContainer/SubViewport/trees" unique_id=292618844 instance=ExtResource("7_8cxpi")]
 transform = Transform3D(0.07526616, 0, -0.0009302119, 0, 1.3457538, 0, 0.0009445584, 0, 0.07412297, -4.1520514, 11.286524, 2.9287283)
-
-[node name="Node3D154" parent="SubViewportContainer/SubViewport/trees" unique_id=1900794418 instance=ExtResource("7_8cxpi")]
-transform = Transform3D(0.112194285, 0, -0.0012562645, 0, 2.098706, 0, 0.0014079906, 0, 0.10010414, -3.4767368, 16.566498, 3.7672853)
-
-[node name="Node3D155" parent="SubViewportContainer/SubViewport/trees" unique_id=769739587 instance=ExtResource("7_8cxpi")]
-transform = Transform3D(0.07526616, 0, -0.0009302119, 0, 1.3457538, 0, 0.0009445584, 0, 0.07412297, -4.4409394, 11.286524, 4.1003137)
-
-[node name="Node3D156" parent="SubViewportContainer/SubViewport/trees" unique_id=2076328269 instance=ExtResource("7_8cxpi")]
-transform = Transform3D(0.07526616, 0, -0.0009302119, 0, 1.3457538, 0, 0.0009445584, 0, 0.07412297, -3.5463922, 11.286524, 4.913414)
 
 [node name="Node3D157" parent="SubViewportContainer/SubViewport/trees" unique_id=186767966 instance=ExtResource("7_8cxpi")]
 transform = Transform3D(0.112194285, 0, -0.0012562645, 0, 2.098706, 0, 0.0014079906, 0, 0.10010414, -3.1676152, 16.566498, 2.4909713)
@@ -1110,17 +1069,14 @@ transform = Transform3D(0.112194285, 0, -0.0012562645, 0, 2.098706, 0, 0.0014079
 [node name="Node3D270" parent="SubViewportContainer/SubViewport/trees" unique_id=1001632477 instance=ExtResource("7_8cxpi")]
 transform = Transform3D(0.060863305, 0, -0.00038806148, 0, 0.35246283, 0, 0.00076380855, 0, 0.030922279, -2.9889371, -3.1014917, -2.3108594)
 
-[node name="Node3D271" parent="SubViewportContainer/SubViewport/trees" unique_id=1766416712 instance=ExtResource("7_8cxpi")]
-transform = Transform3D(0.07526616, 0, -0.0009302119, 0, 1.3457538, 0, 0.0009445584, 0, 0.07412297, -1.8112311, 7.017645, 4.1257877)
-
 [node name="Node3D274" parent="SubViewportContainer/SubViewport/trees" unique_id=1259122605 instance=ExtResource("7_8cxpi")]
-transform = Transform3D(0.112194285, 0, -0.0012562645, 0, 2.098706, 0, 0.0014079906, 0, 0.10010414, -3.0947826, 12.297619, 3.0027375)
+transform = Transform3D(0.112194285, 0, -0.0012562645, 0, 2.098706, 0, 0.0014079906, 0, 0.10010414, -3.0947826, 12.297619, 2.79596)
 
 [node name="Node3D275" parent="SubViewportContainer/SubViewport/trees" unique_id=2124044660 instance=ExtResource("7_8cxpi")]
-transform = Transform3D(0.07526616, 0, -0.0009302119, 0, 1.3457538, 0, 0.0009445584, 0, 0.07412297, -2.499108, 7.017645, 3.4584212)
+transform = Transform3D(0.07526616, 0, -0.0009302119, 0, 1.3457538, 0, 0.0009445584, 0, 0.07412297, -2.499108, 7.017645, 3.215566)
 
 [node name="Node3D276" parent="SubViewportContainer/SubViewport/trees" unique_id=191789189 instance=ExtResource("7_8cxpi")]
-transform = Transform3D(0.112194285, 0, -0.0012562645, 0, 2.098706, 0, 0.0014079906, 0, 0.10010414, -1.5146717, 12.297619, 3.020664)
+transform = Transform3D(0.112194285, 0, -0.0012562645, 0, 2.098706, 0, 0.0014079906, 0, 0.10010414, -1.5146717, 12.297619, 2.8237565)
 
 [node name="Node3D277" parent="SubViewportContainer/SubViewport/trees" unique_id=1630161438 instance=ExtResource("7_8cxpi")]
 transform = Transform3D(0.07526616, 0, -0.0009302119, 0, 1.3457538, 0, 0.0009445584, 0, 0.07412297, -2.6206973, 7.017645, 1.3238069)
@@ -1139,33 +1095,6 @@ transform = Transform3D(0.112194285, 0, -0.0012562645, 0, 2.098706, 0, 0.0014079
 
 [node name="Node3D282" parent="SubViewportContainer/SubViewport/trees" unique_id=1036605884 instance=ExtResource("7_8cxpi")]
 transform = Transform3D(0.060863305, 0, -0.00038806148, 0, 0.35246283, 0, 0.00076380855, 0, 0.030922279, -3.105739, -3.1014917, 1.2754675)
-
-[node name="Node3D283" parent="SubViewportContainer/SubViewport/trees" unique_id=2087080706 instance=ExtResource("7_8cxpi")]
-transform = Transform3D(0.07526616, 0, -0.0009302119, 0, 1.3457538, 0, 0.0009445584, 0, 0.07412297, -1.852803, 7.017645, 7.120482)
-
-[node name="Node3D286" parent="SubViewportContainer/SubViewport/trees" unique_id=1176514083 instance=ExtResource("7_8cxpi")]
-transform = Transform3D(0.112194285, 0, -0.0012562645, 0, 2.098706, 0, 0.0014079906, 0, 0.10010414, -3.1363544, 12.297619, 5.997431)
-
-[node name="Node3D287" parent="SubViewportContainer/SubViewport/trees" unique_id=570727461 instance=ExtResource("7_8cxpi")]
-transform = Transform3D(0.07526616, 0, -0.0009302119, 0, 1.3457538, 0, 0.0009445584, 0, 0.07412297, -2.54068, 7.017645, 6.453115)
-
-[node name="Node3D288" parent="SubViewportContainer/SubViewport/trees" unique_id=216592595 instance=ExtResource("7_8cxpi")]
-transform = Transform3D(0.112194285, 0, -0.0012562645, 0, 2.098706, 0, 0.0014079906, 0, 0.10010414, -1.5562435, 12.297619, 6.015358)
-
-[node name="Node3D289" parent="SubViewportContainer/SubViewport/trees" unique_id=2137783192 instance=ExtResource("7_8cxpi")]
-transform = Transform3D(0.07526616, 0, -0.0009302119, 0, 1.3457538, 0, 0.0009445584, 0, 0.07412297, -2.6622694, 7.017645, 4.3185)
-
-[node name="Node3D290" parent="SubViewportContainer/SubViewport/trees" unique_id=1929951412 instance=ExtResource("7_8cxpi")]
-transform = Transform3D(0.112194285, 0, -0.0012562645, 0, 2.098706, 0, 0.0014079906, 0, 0.10010414, -1.9869552, 12.297619, 5.157058)
-
-[node name="Node3D291" parent="SubViewportContainer/SubViewport/trees" unique_id=1631085500 instance=ExtResource("7_8cxpi")]
-transform = Transform3D(0.07526616, 0, -0.0009302119, 0, 1.3457538, 0, 0.0009445584, 0, 0.07412297, -2.951157, 7.017645, 5.4900846)
-
-[node name="Node3D292" parent="SubViewportContainer/SubViewport/trees" unique_id=156843790 instance=ExtResource("7_8cxpi")]
-transform = Transform3D(0.07526616, 0, -0.0009302119, 0, 1.3457538, 0, 0.0009445584, 0, 0.07412297, -2.0566099, 7.017645, 6.3031864)
-
-[node name="Node3D293" parent="SubViewportContainer/SubViewport/trees" unique_id=964147625 instance=ExtResource("7_8cxpi")]
-transform = Transform3D(0.112194285, 0, -0.0012562645, 0, 2.098706, 0, 0.0014079906, 0, 0.10010414, -1.6778334, 12.297619, 3.8807428)
 
 [node name="Node3D294" parent="SubViewportContainer/SubViewport/trees" unique_id=1839222207 instance=ExtResource("7_8cxpi")]
 transform = Transform3D(0.060863305, 0, -0.00038806148, 0, 0.35246283, 0, 0.00076380855, 0, 0.030922279, -3.1473112, -3.1014917, 4.2701616)
@@ -1533,20 +1462,644 @@ transform = Transform3D(0.11200632, 0, -0.005926814, 0, 2.0987058, 0, 0.00664262
 [node name="Node3D404" parent="SubViewportContainer/SubViewport/trees" unique_id=513232493 instance=ExtResource("7_8cxpi")]
 transform = Transform3D(0.06076134, 0, -0.0018307995, 0, 0.3524628, 0, 0.0036035029, 0, 0.030870473, -2.9278595, -3.1014917, -8.511055)
 
+[node name="Node3D405" parent="SubViewportContainer/SubViewport/trees" unique_id=906108255 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -2.3352542, 11.510782, 15.926288)
+
+[node name="Node3D406" parent="SubViewportContainer/SubViewport/trees" unique_id=970427318 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -1.2509418, 12.297619, 16.077183)
+
+[node name="Node3D407" parent="SubViewportContainer/SubViewport/trees" unique_id=1165376686 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -1.0513597, 7.017645, 16.759153)
+
+[node name="Node3D408" parent="SubViewportContainer/SubViewport/trees" unique_id=2057504257 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -2.6758842, 16.790756, 13.3791275)
+
+[node name="Node3D409" parent="SubViewportContainer/SubViewport/trees" unique_id=1676357426 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -2.4763017, 11.510782, 15.023055)
+
+[node name="Node3D410" parent="SubViewportContainer/SubViewport/trees" unique_id=1770208228 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -1.3919896, 16.790756, 15.17395)
+
+[node name="Node3D411" parent="SubViewportContainer/SubViewport/trees" unique_id=757980917 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -1.2012645, 16.790756, 11.633249)
+
+[node name="Node3D412" parent="SubViewportContainer/SubViewport/trees" unique_id=1836034739 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -1.0534915, 11.510782, 13.807172)
+
+[node name="Node3D413" parent="SubViewportContainer/SubViewport/trees" unique_id=341082135 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -1.984509, 11.510782, 15.150804)
+
+[node name="Node3D414" parent="SubViewportContainer/SubViewport/trees" unique_id=2053073246 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.049453527, 0, -0.018029185, 0, 0.35246283, 0, 0.035486247, 0, 0.025125412, -1.5905274, -3.1014917, 12.919531)
+
+[node name="Node3D415" parent="SubViewportContainer/SubViewport/trees" unique_id=1206810158 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -4.990834, 11.128004, 15.926288)
+
+[node name="Node3D416" parent="SubViewportContainer/SubViewport/trees" unique_id=650912879 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -3.9065213, 16.407978, 16.077183)
+
+[node name="Node3D417" parent="SubViewportContainer/SubViewport/trees" unique_id=1325337943 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -3.7069395, 11.128004, 16.759153)
+
+[node name="Node3D418" parent="SubViewportContainer/SubViewport/trees" unique_id=1128570408 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -5.331464, 16.407978, 12.666605)
+
+[node name="Node3D419" parent="SubViewportContainer/SubViewport/trees" unique_id=1093551528 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -5.131881, 11.128004, 15.023055)
+
+[node name="Node3D420" parent="SubViewportContainer/SubViewport/trees" unique_id=1176304776 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -4.0475693, 16.407978, 15.17395)
+
+[node name="Node3D421" parent="SubViewportContainer/SubViewport/trees" unique_id=1607501856 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -3.8568442, 16.407978, 13.015353)
+
+[node name="Node3D422" parent="SubViewportContainer/SubViewport/trees" unique_id=1137228217 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -4.8582163, 11.128004, 14.021097)
+
+[node name="Node3D423" parent="SubViewportContainer/SubViewport/trees" unique_id=245032838 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -4.640089, 11.128004, 15.150804)
+
+[node name="Node3D436" parent="SubViewportContainer/SubViewport/trees" unique_id=1159105072 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -7.5203686, 11.510782, 15.926288)
+
+[node name="Node3D437" parent="SubViewportContainer/SubViewport/trees" unique_id=1472741017 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -7.860998, 16.790756, 13.717285)
+
+[node name="Node3D438" parent="SubViewportContainer/SubViewport/trees" unique_id=1583072063 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -7.6614156, 11.510782, 15.023055)
+
+[node name="Node3D439" parent="SubViewportContainer/SubViewport/trees" unique_id=382077947 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -6.577103, 16.790756, 15.17395)
+
+[node name="Node3D441" parent="SubViewportContainer/SubViewport/trees" unique_id=61763581 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -7.3877506, 11.510782, 13.5735855)
+
+[node name="Node3D442" parent="SubViewportContainer/SubViewport/trees" unique_id=521721414 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -7.1696234, 11.510782, 15.150804)
+
+[node name="Node3D443" parent="SubViewportContainer/SubViewport/trees" unique_id=14439411 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -10.175948, 11.128004, 15.926288)
+
+[node name="Node3D444" parent="SubViewportContainer/SubViewport/trees" unique_id=406093530 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -10.516578, 16.407978, 12.965653)
+
+[node name="Node3D445" parent="SubViewportContainer/SubViewport/trees" unique_id=2111351713 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -10.316996, 11.128004, 15.023055)
+
+[node name="Node3D446" parent="SubViewportContainer/SubViewport/trees" unique_id=870589122 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -9.232683, 16.407978, 15.17395)
+
+[node name="Node3D447" parent="SubViewportContainer/SubViewport/trees" unique_id=335875621 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -9.041958, 16.407978, 13.100526)
+
+[node name="Node3D448" parent="SubViewportContainer/SubViewport/trees" unique_id=1499095081 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -10.04333, 11.128004, 14.021097)
+
+[node name="Node3D449" parent="SubViewportContainer/SubViewport/trees" unique_id=1801141813 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -9.825203, 11.128004, 15.150804)
+
+[node name="Node3D424" parent="SubViewportContainer/SubViewport/trees" unique_id=647894663 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -9.64241, 11.510782, 10.412547)
+
+[node name="Node3D425" parent="SubViewportContainer/SubViewport/trees" unique_id=136059706 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -8.558099, 12.297619, 10.563442)
+
+[node name="Node3D427" parent="SubViewportContainer/SubViewport/trees" unique_id=19887956 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -9.983041, 16.790756, 7.865387)
+
+[node name="Node3D428" parent="SubViewportContainer/SubViewport/trees" unique_id=1752797159 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -9.783459, 11.510782, 9.509315)
+
+[node name="Node3D429" parent="SubViewportContainer/SubViewport/trees" unique_id=520594870 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -8.699147, 16.790756, 9.66021)
+
+[node name="Node3D430" parent="SubViewportContainer/SubViewport/trees" unique_id=747013097 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -8.508421, 16.790756, 7.8027015)
+
+[node name="Node3D431" parent="SubViewportContainer/SubViewport/trees" unique_id=584124695 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -9.509794, 11.510782, 7.1075335)
+
+[node name="Node3D432" parent="SubViewportContainer/SubViewport/trees" unique_id=766331431 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -9.291665, 11.510782, 9.637063)
+
+[node name="Node3D433" parent="SubViewportContainer/SubViewport/trees" unique_id=1782107184 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.049453527, 0, -0.018029185, 0, 0.35246283, 0, 0.035486247, 0, 0.025125412, -8.897684, -3.1014917, 7.405791)
+
+[node name="Node3D434" parent="SubViewportContainer/SubViewport/trees" unique_id=644873169 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -12.297991, 11.128004, 10.412547)
+
+[node name="Node3D435" parent="SubViewportContainer/SubViewport/trees" unique_id=1079855275 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -11.213678, 16.407978, 10.563442)
+
+[node name="Node3D450" parent="SubViewportContainer/SubViewport/trees" unique_id=1330179579 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -11.014096, 11.128004, 11.245413)
+
+[node name="Node3D451" parent="SubViewportContainer/SubViewport/trees" unique_id=1148904342 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -12.638622, 16.407978, 7.152865)
+
+[node name="Node3D452" parent="SubViewportContainer/SubViewport/trees" unique_id=1030739007 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -12.439039, 11.128004, 9.509315)
+
+[node name="Node3D453" parent="SubViewportContainer/SubViewport/trees" unique_id=337721274 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -11.354727, 16.407978, 9.66021)
+
+[node name="Node3D454" parent="SubViewportContainer/SubViewport/trees" unique_id=1464815245 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -11.164001, 16.407978, 7.5016127)
+
+[node name="Node3D455" parent="SubViewportContainer/SubViewport/trees" unique_id=1072724929 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -12.165375, 11.128004, 8.507357)
+
+[node name="Node3D456" parent="SubViewportContainer/SubViewport/trees" unique_id=1657790570 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -11.9472475, 11.128004, 9.637063)
+
+[node name="Node3D457" parent="SubViewportContainer/SubViewport/trees" unique_id=1733248474 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -14.827525, 11.510782, 10.412547)
+
+[node name="Node3D458" parent="SubViewportContainer/SubViewport/trees" unique_id=1834752189 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -15.168157, 16.790756, 8.203545)
+
+[node name="Node3D459" parent="SubViewportContainer/SubViewport/trees" unique_id=866788376 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -14.968574, 11.510782, 9.509315)
+
+[node name="Node3D460" parent="SubViewportContainer/SubViewport/trees" unique_id=1816778119 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -13.88426, 16.790756, 9.66021)
+
+[node name="Node3D461" parent="SubViewportContainer/SubViewport/trees" unique_id=1297448518 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -13.693537, 16.790756, 7.4141765)
+
+[node name="Node3D462" parent="SubViewportContainer/SubViewport/trees" unique_id=1408034949 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -14.694909, 11.510782, 8.059845)
+
+[node name="Node3D463" parent="SubViewportContainer/SubViewport/trees" unique_id=110792178 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -14.476782, 11.510782, 9.637063)
+
+[node name="Node3D464" parent="SubViewportContainer/SubViewport/trees" unique_id=1534360527 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -17.483107, 11.128004, 10.412547)
+
+[node name="Node3D465" parent="SubViewportContainer/SubViewport/trees" unique_id=625483792 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -17.823734, 16.407978, 7.451913)
+
+[node name="Node3D466" parent="SubViewportContainer/SubViewport/trees" unique_id=1246774378 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -17.624155, 11.128004, 9.509315)
+
+[node name="Node3D467" parent="SubViewportContainer/SubViewport/trees" unique_id=1840005851 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -16.53984, 16.407978, 9.66021)
+
+[node name="Node3D468" parent="SubViewportContainer/SubViewport/trees" unique_id=1252223274 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -16.349115, 16.407978, 7.586786)
+
+[node name="Node3D469" parent="SubViewportContainer/SubViewport/trees" unique_id=907160839 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -17.350487, 11.128004, 8.507357)
+
+[node name="Node3D470" parent="SubViewportContainer/SubViewport/trees" unique_id=1250568881 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -17.13236, 11.128004, 9.637063)
+
+[node name="Node3D426" parent="SubViewportContainer/SubViewport/trees" unique_id=497504944 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -12.30297, 11.510782, 15.926288)
+
+[node name="Node3D440" parent="SubViewportContainer/SubViewport/trees" unique_id=1812637159 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -11.2186575, 12.297619, 16.077183)
+
+[node name="Node3D471" parent="SubViewportContainer/SubViewport/trees" unique_id=286688207 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -11.019075, 7.017645, 16.759153)
+
+[node name="Node3D472" parent="SubViewportContainer/SubViewport/trees" unique_id=1052597874 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -12.6436, 16.790756, 13.3791275)
+
+[node name="Node3D473" parent="SubViewportContainer/SubViewport/trees" unique_id=1735539158 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -12.444018, 11.510782, 15.023055)
+
+[node name="Node3D474" parent="SubViewportContainer/SubViewport/trees" unique_id=2045199977 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -11.359705, 16.790756, 15.17395)
+
+[node name="Node3D475" parent="SubViewportContainer/SubViewport/trees" unique_id=761185927 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -11.168981, 16.790756, 13.3164425)
+
+[node name="Node3D476" parent="SubViewportContainer/SubViewport/trees" unique_id=323189433 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -12.170353, 11.510782, 12.621274)
+
+[node name="Node3D477" parent="SubViewportContainer/SubViewport/trees" unique_id=2035034079 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -11.952225, 11.510782, 15.150804)
+
+[node name="Node3D478" parent="SubViewportContainer/SubViewport/trees" unique_id=729166488 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.049453527, 0, -0.018029185, 0, 0.35246283, 0, 0.035486247, 0, 0.025125412, -11.558244, -3.1014917, 12.919531)
+
+[node name="Node3D479" parent="SubViewportContainer/SubViewport/trees" unique_id=963571074 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -14.95855, 11.128004, 15.926288)
+
+[node name="Node3D480" parent="SubViewportContainer/SubViewport/trees" unique_id=210312099 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -13.874237, 16.407978, 16.077183)
+
+[node name="Node3D481" parent="SubViewportContainer/SubViewport/trees" unique_id=291137436 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -13.674655, 11.128004, 16.759153)
+
+[node name="Node3D482" parent="SubViewportContainer/SubViewport/trees" unique_id=1875550515 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -15.29918, 16.407978, 12.666605)
+
+[node name="Node3D483" parent="SubViewportContainer/SubViewport/trees" unique_id=566188633 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -15.099596, 11.128004, 15.023055)
+
+[node name="Node3D484" parent="SubViewportContainer/SubViewport/trees" unique_id=1862517083 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -14.015285, 16.407978, 15.17395)
+
+[node name="Node3D485" parent="SubViewportContainer/SubViewport/trees" unique_id=1626135878 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -13.82456, 16.407978, 13.015353)
+
+[node name="Node3D486" parent="SubViewportContainer/SubViewport/trees" unique_id=766161860 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -14.8259325, 11.128004, 14.021097)
+
+[node name="Node3D487" parent="SubViewportContainer/SubViewport/trees" unique_id=1889146547 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -14.607805, 11.128004, 15.150804)
+
+[node name="Node3D488" parent="SubViewportContainer/SubViewport/trees" unique_id=142489637 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -17.488085, 11.510782, 15.926288)
+
+[node name="Node3D489" parent="SubViewportContainer/SubViewport/trees" unique_id=11547722 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -17.828714, 16.790756, 13.717285)
+
+[node name="Node3D490" parent="SubViewportContainer/SubViewport/trees" unique_id=1978644827 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -17.629131, 11.510782, 15.023055)
+
+[node name="Node3D491" parent="SubViewportContainer/SubViewport/trees" unique_id=19852703 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -16.544819, 16.790756, 15.17395)
+
+[node name="Node3D492" parent="SubViewportContainer/SubViewport/trees" unique_id=357814292 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -17.355467, 11.510782, 13.5735855)
+
+[node name="Node3D493" parent="SubViewportContainer/SubViewport/trees" unique_id=177875469 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -17.137339, 11.510782, 15.150804)
+
+[node name="Node3D494" parent="SubViewportContainer/SubViewport/trees" unique_id=1361788763 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -20.143663, 11.128004, 15.926288)
+
+[node name="Node3D495" parent="SubViewportContainer/SubViewport/trees" unique_id=1734222349 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -20.484293, 16.407978, 12.965653)
+
+[node name="Node3D496" parent="SubViewportContainer/SubViewport/trees" unique_id=1428258060 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -20.284712, 11.128004, 15.023055)
+
+[node name="Node3D497" parent="SubViewportContainer/SubViewport/trees" unique_id=1416995927 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -19.2004, 16.407978, 15.17395)
+
+[node name="Node3D498" parent="SubViewportContainer/SubViewport/trees" unique_id=10642016 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -19.009672, 16.407978, 13.100526)
+
+[node name="Node3D499" parent="SubViewportContainer/SubViewport/trees" unique_id=575619238 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -20.011047, 11.128004, 14.021097)
+
+[node name="Node3D500" parent="SubViewportContainer/SubViewport/trees" unique_id=238937148 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -19.79292, 11.128004, 15.150804)
+
+[node name="Node3D501" parent="SubViewportContainer/SubViewport/trees" unique_id=81641266 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -19.800762, 11.510782, 10.276009)
+
+[node name="Node3D502" parent="SubViewportContainer/SubViewport/trees" unique_id=122418661 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -18.716448, 12.297619, 10.426904)
+
+[node name="Node3D504" parent="SubViewportContainer/SubViewport/trees" unique_id=948378764 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -20.141392, 16.790756, 7.728848)
+
+[node name="Node3D505" parent="SubViewportContainer/SubViewport/trees" unique_id=1137226695 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -19.941809, 11.510782, 9.372775)
+
+[node name="Node3D506" parent="SubViewportContainer/SubViewport/trees" unique_id=182599465 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -18.857496, 16.790756, 9.52367)
+
+[node name="Node3D507" parent="SubViewportContainer/SubViewport/trees" unique_id=1053503675 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -18.66677, 16.790756, 7.6661625)
+
+[node name="Node3D508" parent="SubViewportContainer/SubViewport/trees" unique_id=640167214 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -19.668144, 11.510782, 6.9709945)
+
+[node name="Node3D509" parent="SubViewportContainer/SubViewport/trees" unique_id=2108913497 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -19.450016, 11.510782, 9.500524)
+
+[node name="Node3D510" parent="SubViewportContainer/SubViewport/trees" unique_id=1817698471 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.049453527, 0, -0.018029185, 0, 0.35246283, 0, 0.035486247, 0, 0.025125412, -19.056034, -3.1014917, 7.2692513)
+
+[node name="Node3D511" parent="SubViewportContainer/SubViewport/trees" unique_id=1401519335 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -22.45634, 11.128004, 10.276009)
+
+[node name="Node3D512" parent="SubViewportContainer/SubViewport/trees" unique_id=365577389 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -21.372028, 16.407978, 10.426904)
+
+[node name="Node3D513" parent="SubViewportContainer/SubViewport/trees" unique_id=1512009862 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -21.172445, 11.128004, 11.108874)
+
+[node name="Node3D514" parent="SubViewportContainer/SubViewport/trees" unique_id=1375341538 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -22.79697, 16.407978, 7.016326)
+
+[node name="Node3D515" parent="SubViewportContainer/SubViewport/trees" unique_id=1349949384 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -22.597387, 11.128004, 9.372775)
+
+[node name="Node3D516" parent="SubViewportContainer/SubViewport/trees" unique_id=933686703 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -21.513077, 16.407978, 9.52367)
+
+[node name="Node3D517" parent="SubViewportContainer/SubViewport/trees" unique_id=849799311 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -21.322351, 16.407978, 7.3650737)
+
+[node name="Node3D518" parent="SubViewportContainer/SubViewport/trees" unique_id=453685160 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -22.323723, 11.128004, 8.370818)
+
+[node name="Node3D519" parent="SubViewportContainer/SubViewport/trees" unique_id=1226523173 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -22.105597, 11.128004, 9.500524)
+
+[node name="Node3D520" parent="SubViewportContainer/SubViewport/trees" unique_id=61588316 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -24.985876, 11.510782, 10.276009)
+
+[node name="Node3D521" parent="SubViewportContainer/SubViewport/trees" unique_id=1431415159 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -25.326506, 16.790756, 8.067005)
+
+[node name="Node3D522" parent="SubViewportContainer/SubViewport/trees" unique_id=1626984074 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -25.126923, 11.510782, 9.372775)
+
+[node name="Node3D523" parent="SubViewportContainer/SubViewport/trees" unique_id=1690996222 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -24.042612, 16.790756, 9.52367)
+
+[node name="Node3D524" parent="SubViewportContainer/SubViewport/trees" unique_id=947736280 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -24.853258, 11.510782, 7.9233055)
+
+[node name="Node3D525" parent="SubViewportContainer/SubViewport/trees" unique_id=1278468704 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -24.63513, 11.510782, 9.500524)
+
+[node name="Node3D526" parent="SubViewportContainer/SubViewport/trees" unique_id=745356457 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -27.641455, 11.128004, 10.276009)
+
+[node name="Node3D527" parent="SubViewportContainer/SubViewport/trees" unique_id=718251638 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -27.982084, 16.407978, 7.315374)
+
+[node name="Node3D528" parent="SubViewportContainer/SubViewport/trees" unique_id=1787642952 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -27.782503, 11.128004, 9.372775)
+
+[node name="Node3D529" parent="SubViewportContainer/SubViewport/trees" unique_id=556126969 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -26.69819, 16.407978, 9.52367)
+
+[node name="Node3D530" parent="SubViewportContainer/SubViewport/trees" unique_id=1694128327 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, -26.507463, 16.407978, 7.450247)
+
+[node name="Node3D531" parent="SubViewportContainer/SubViewport/trees" unique_id=105225722 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -27.508839, 11.128004, 8.370818)
+
+[node name="Node3D532" parent="SubViewportContainer/SubViewport/trees" unique_id=22140316 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -27.29071, 11.128004, 9.500524)
+
+[node name="Node3D533" parent="SubViewportContainer/SubViewport/trees" unique_id=1796743763 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.04388381, 0, 0.060227472, 0, 1.3457537, 0, -0.06115634, 0, 0.043217268, -25.360716, 11.128004, 11.919195)
+
+[node name="Node3D534" parent="SubViewportContainer/SubViewport/trees" unique_id=1241101749 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.06541468, 0, 0.081338055, 0, 2.0987062, 0, -0.09116172, 0, 0.058365546, -25.193802, 16.407978, 10.938945)
+
+[node name="Node3D535" parent="SubViewportContainer/SubViewport/trees" unique_id=1556195318 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.06541468, 0, 0.081338055, 0, 2.0987062, 0, -0.09116172, 0, 0.058365546, -28.966444, 16.407978, 12.227134)
+
+[node name="Node3D536" parent="SubViewportContainer/SubViewport/trees" unique_id=1686822530 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.04388381, 0, 0.060227472, 0, 1.3457537, 0, -0.06115634, 0, 0.043217268, -26.359833, 11.128004, 12.046705)
+
+[node name="Node3D537" parent="SubViewportContainer/SubViewport/trees" unique_id=670023169 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.06541468, 0, 0.081338055, 0, 2.0987062, 0, -0.09116172, 0, 0.058365546, -26.192919, 16.407978, 11.066458)
+
+[node name="Node3D538" parent="SubViewportContainer/SubViewport/trees" unique_id=292519557 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.06541468, 0, 0.081338055, 0, 2.0987062, 0, -0.09116172, 0, 0.058365546, -28.580675, 16.407978, 10.894035)
+
+[node name="Node3D539" parent="SubViewportContainer/SubViewport/trees" unique_id=1563600053 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.04388381, 0, 0.060227472, 0, 1.3457537, 0, -0.06115634, 0, 0.043217268, -27.46816, 11.128004, 11.799305)
+
+[node name="Node3D540" parent="SubViewportContainer/SubViewport/trees" unique_id=1644443735 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.04388381, 0, 0.060227472, 0, 1.3457537, 0, -0.06115634, 0, 0.043217268, -26.218527, 11.128004, 11.602113)
+
+[node name="Node3D541" parent="SubViewportContainer/SubViewport/trees" unique_id=872322102 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.04388381, 0, 0.060227472, 0, 1.3457537, 0, -0.06115634, 0, 0.043217268, -25.360716, 11.510782, 14.205967)
+
+[node name="Node3D542" parent="SubViewportContainer/SubViewport/trees" unique_id=411595414 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.06541468, 0, 0.081338055, 0, 2.0987062, 0, -0.09116172, 0, 0.058365546, -27.804224, 16.790756, 14.513905)
+
+[node name="Node3D543" parent="SubViewportContainer/SubViewport/trees" unique_id=652106757 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.04388381, 0, 0.060227472, 0, 1.3457537, 0, -0.06115634, 0, 0.043217268, -26.359833, 11.510782, 14.333476)
+
+[node name="Node3D544" parent="SubViewportContainer/SubViewport/trees" unique_id=338687154 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.06541468, 0, 0.081338055, 0, 2.0987062, 0, -0.09116172, 0, 0.058365546, -26.192919, 16.790756, 13.353229)
+
+[node name="Node3D545" parent="SubViewportContainer/SubViewport/trees" unique_id=2031422064 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.04388381, 0, 0.060227472, 0, 1.3457537, 0, -0.06115634, 0, 0.043217268, -27.963179, 11.510782, 14.086076)
+
+[node name="Node3D546" parent="SubViewportContainer/SubViewport/trees" unique_id=1430421645 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.04388381, 0, 0.060227472, 0, 1.3457537, 0, -0.06115634, 0, 0.043217268, -26.218521, 11.510782, 13.888883)
+
+[node name="Node3D547" parent="SubViewportContainer/SubViewport/trees" unique_id=1242120702 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.04388381, 0, 0.060227472, 0, 1.3457537, 0, -0.06115634, 0, 0.043217268, -25.360716, 11.128004, 16.606686)
+
+[node name="Node3D548" parent="SubViewportContainer/SubViewport/trees" unique_id=709355674 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.06541468, 0, 0.081338055, 0, 2.0987062, 0, -0.09116172, 0, 0.058365546, -28.635649, 16.407978, 16.914623)
+
+[node name="Node3D549" parent="SubViewportContainer/SubViewport/trees" unique_id=435475839 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.04388381, 0, 0.060227472, 0, 1.3457537, 0, -0.06115634, 0, 0.043217268, -26.359833, 11.128004, 16.734198)
+
+[node name="Node3D550" parent="SubViewportContainer/SubViewport/trees" unique_id=1558663376 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.06541468, 0, 0.081338055, 0, 2.0987062, 0, -0.09116172, 0, 0.058365546, -26.192919, 16.407978, 15.753947)
+
+[node name="Node3D551" parent="SubViewportContainer/SubViewport/trees" unique_id=429959956 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.06541468, 0, 0.081338055, 0, 2.0987062, 0, -0.09116172, 0, 0.058365546, -28.48646, 16.407978, 15.581525)
+
+[node name="Node3D552" parent="SubViewportContainer/SubViewport/trees" unique_id=390616178 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.04388381, 0, 0.060227472, 0, 1.3457537, 0, -0.06115634, 0, 0.043217268, -27.46816, 11.128004, 16.486797)
+
+[node name="Node3D553" parent="SubViewportContainer/SubViewport/trees" unique_id=1920561064 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.04388381, 0, 0.060227472, 0, 1.3457537, 0, -0.06115634, 0, 0.043217268, -26.218521, 11.128004, 16.289602)
+
+[node name="Node3D503" parent="SubViewportContainer/SubViewport/trees" unique_id=607910927 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.0395008, 0, -0.06310156, 0, 1.3457536, 0, 0.06407475, 0, -0.03890082, 3.2005012, 11.510782, 22.599934)
+
+[node name="Node3D554" parent="SubViewportContainer/SubViewport/trees" unique_id=1771557042 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.058881205, 0, -0.085219555, 0, 2.0987065, 0, 0.095511995, 0, -0.052536123, 3.1098046, 12.297619, 23.588335)
+
+[node name="Node3D555" parent="SubViewportContainer/SubViewport/trees" unique_id=1836620362 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.0395008, 0, -0.06310156, 0, 1.3457536, 0, 0.06407475, 0, -0.03890082, 2.3712351, 7.017645, 23.816002)
+
+[node name="Node3D556" parent="SubViewportContainer/SubViewport/trees" unique_id=758238715 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.0395008, 0, -0.06310156, 0, 1.3457536, 0, 0.06407475, 0, -0.03890082, 4.187318, 11.510782, 22.409588)
+
+[node name="Node3D557" parent="SubViewportContainer/SubViewport/trees" unique_id=1453142891 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.058881205, 0, -0.085219555, 0, 2.0987065, 0, 0.095511995, 0, -0.052536123, 4.0966187, 16.790756, 23.397987)
+
+[node name="Node3D558" parent="SubViewportContainer/SubViewport/trees" unique_id=961411593 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.0395008, 0, -0.06310156, 0, 1.3457536, 0, 0.06407475, 0, -0.03890082, 4.080735, 11.510782, 22.862026)
+
+[node name="Node3D559" parent="SubViewportContainer/SubViewport/trees" unique_id=569700582 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.031941954, 0, -0.026324408, 0, 0.3524628, 0, 0.051813465, 0, -0.016228467, 6.5703835, -3.1014917, 23.061329)
+
+[node name="Node3D560" parent="SubViewportContainer/SubViewport/trees" unique_id=1631117721 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.0395008, 0, -0.06310156, 0, 1.3457536, 0, 0.06407475, 0, -0.03890082, 3.0148408, 11.128004, 20.20509)
+
+[node name="Node3D561" parent="SubViewportContainer/SubViewport/trees" unique_id=278772682 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.058881205, 0, -0.085219555, 0, 2.0987065, 0, 0.095511995, 0, -0.052536123, 2.9241443, 16.407978, 21.19349)
+
+[node name="Node3D562" parent="SubViewportContainer/SubViewport/trees" unique_id=1509885956 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.0395008, 0, -0.06310156, 0, 1.3457536, 0, 0.06407475, 0, -0.03890082, 2.185575, 11.128004, 21.421154)
+
+[node name="Node3D563" parent="SubViewportContainer/SubViewport/trees" unique_id=2104480479 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.0395008, 0, -0.06310156, 0, 1.3457536, 0, 0.06407475, 0, -0.03890082, 4.001656, 11.128004, 20.014742)
+
+[node name="Node3D564" parent="SubViewportContainer/SubViewport/trees" unique_id=476054122 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.058881205, 0, -0.085219555, 0, 2.0987065, 0, 0.095511995, 0, -0.052536123, 3.9109588, 16.407978, 21.003143)
+
+[node name="Node3D565" parent="SubViewportContainer/SubViewport/trees" unique_id=1799557401 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.0395008, 0, -0.06310156, 0, 1.3457536, 0, 0.06407475, 0, -0.03890082, 5.126402, 11.128004, 20.191486)
+
+[node name="Node3D566" parent="SubViewportContainer/SubViewport/trees" unique_id=707809367 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.0395008, 0, -0.06310156, 0, 1.3457536, 0, 0.06407475, 0, -0.03890082, 3.8950744, 11.128004, 20.46718)
+
+[node name="Node3D567" parent="SubViewportContainer/SubViewport/trees" unique_id=977249878 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.0395008, 0, -0.06310156, 0, 1.3457536, 0, 0.06407475, 0, -0.03890082, 2.837993, 11.510782, 17.923914)
+
+[node name="Node3D568" parent="SubViewportContainer/SubViewport/trees" unique_id=2130756327 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.058881205, 0, -0.085219555, 0, 2.0987065, 0, 0.095511995, 0, -0.052536123, 5.2517114, 16.790756, 17.46229)
+
+[node name="Node3D569" parent="SubViewportContainer/SubViewport/trees" unique_id=577497426 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.0395008, 0, -0.06310156, 0, 1.3457536, 0, 0.06407475, 0, -0.03890082, 3.8248084, 11.510782, 17.733568)
+
+[node name="Node3D570" parent="SubViewportContainer/SubViewport/trees" unique_id=1377484419 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.058881205, 0, -0.085219555, 0, 2.0987065, 0, 0.095511995, 0, -0.052536123, 3.7341108, 16.790756, 18.721968)
+
+[node name="Node3D571" parent="SubViewportContainer/SubViewport/trees" unique_id=229758684 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.0395008, 0, -0.06310156, 0, 1.3457536, 0, 0.06407475, 0, -0.03890082, 5.443363, 11.510782, 17.879025)
+
+[node name="Node3D572" parent="SubViewportContainer/SubViewport/trees" unique_id=1116424384 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.0395008, 0, -0.06310156, 0, 1.3457536, 0, 0.06407475, 0, -0.03890082, 3.7182267, 11.510782, 18.186005)
+
+[node name="Node3D573" parent="SubViewportContainer/SubViewport/trees" unique_id=909202213 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.0395008, 0, -0.06310156, 0, 1.3457536, 0, 0.06407475, 0, -0.03890082, 2.652333, 11.128004, 15.529069)
+
+[node name="Node3D574" parent="SubViewportContainer/SubViewport/trees" unique_id=1845975930 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.0395008, 0, -0.06310156, 0, 1.3457536, 0, 0.06407475, 0, -0.03890082, 3.6391482, 11.128004, 15.338721)
+
+[node name="Node3D575" parent="SubViewportContainer/SubViewport/trees" unique_id=1347328511 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.058881205, 0, -0.085219555, 0, 2.0987065, 0, 0.095511995, 0, -0.052536123, 3.548451, 16.407978, 16.327122)
+
+[node name="Node3D576" parent="SubViewportContainer/SubViewport/trees" unique_id=675246651 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.0395008, 0, -0.06310156, 0, 1.3457536, 0, 0.06407475, 0, -0.03890082, 4.7638946, 11.128004, 15.515467)
+
+[node name="Node3D577" parent="SubViewportContainer/SubViewport/trees" unique_id=274096286 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.0395008, 0, -0.06310156, 0, 1.3457536, 0, 0.06407475, 0, -0.03890082, 3.5325665, 11.128004, 15.79116)
+
+[node name="Node3D578" parent="SubViewportContainer/SubViewport/trees" unique_id=1003256718 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.0395008, 0, -0.06310156, 0, 1.3457536, 0, 0.06407475, 0, -0.03890082, 2.5036259, 11.510782, 13.610886)
+
+[node name="Node3D579" parent="SubViewportContainer/SubViewport/trees" unique_id=1687956084 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.058881205, 0, -0.085219555, 0, 2.0987065, 0, 0.095511995, 0, -0.052536123, 2.4129295, 12.297619, 14.599285)
+
+[node name="Node3D580" parent="SubViewportContainer/SubViewport/trees" unique_id=1049724157 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.0395008, 0, -0.06310156, 0, 1.3457536, 0, 0.06407475, 0, -0.03890082, 1.6743602, 7.017645, 14.82695)
+
+[node name="Node3D581" parent="SubViewportContainer/SubViewport/trees" unique_id=1927176455 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.058881205, 0, -0.085219555, 0, 2.0987065, 0, 0.095511995, 0, -0.052536123, 5.2904844, 16.790756, 13.12562)
+
+[node name="Node3D582" parent="SubViewportContainer/SubViewport/trees" unique_id=1009637282 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.0395008, 0, -0.06310156, 0, 1.3457536, 0, 0.06407475, 0, -0.03890082, 3.490441, 11.510782, 13.420537)
+
+[node name="Node3D583" parent="SubViewportContainer/SubViewport/trees" unique_id=385041979 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.058881205, 0, -0.085219555, 0, 2.0987065, 0, 0.095511995, 0, -0.052536123, 3.399744, 16.790756, 14.408938)
+
+[node name="Node3D584" parent="SubViewportContainer/SubViewport/trees" unique_id=1369601847 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.058881205, 0, -0.085219555, 0, 2.0987065, 0, 0.095511995, 0, -0.052536123, 5.462751, 16.790756, 14.451073)
+
+[node name="Node3D585" parent="SubViewportContainer/SubViewport/trees" unique_id=1333658108 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.0395008, 0, -0.06310156, 0, 1.3457536, 0, 0.06407475, 0, -0.03890082, 6.1598268, 11.510782, 13.499418)
+
+[node name="Node3D586" parent="SubViewportContainer/SubViewport/trees" unique_id=1162980610 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.0395008, 0, -0.06310156, 0, 1.3457536, 0, 0.06407475, 0, -0.03890082, 3.3838599, 11.510782, 13.872975)
+
+[node name="Node3D587" parent="SubViewportContainer/SubViewport/trees" unique_id=338623022 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.031941954, 0, -0.026324408, 0, 0.3524628, 0, 0.051813465, 0, -0.016228467, 5.8735085, -3.1014917, 14.07228)
+
+[node name="Node3D588" parent="SubViewportContainer/SubViewport/trees" unique_id=222654687 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.0395008, 0, -0.06310156, 0, 1.3457536, 0, 0.06407475, 0, -0.03890082, 2.317966, 11.128004, 11.21604)
+
+[node name="Node3D589" parent="SubViewportContainer/SubViewport/trees" unique_id=405516023 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.058881205, 0, -0.085219555, 0, 2.0987065, 0, 0.095511995, 0, -0.052536123, 2.2272692, 16.407978, 12.204439)
+
+[node name="Node3D590" parent="SubViewportContainer/SubViewport/trees" unique_id=1546236893 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.0395008, 0, -0.06310156, 0, 1.3457536, 0, 0.06407475, 0, -0.03890082, 1.4887002, 11.128004, 12.432104)
+
+[node name="Node3D591" parent="SubViewportContainer/SubViewport/trees" unique_id=2104106658 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.0395008, 0, -0.06310156, 0, 1.3457536, 0, 0.06407475, 0, -0.03890082, 3.3047812, 11.128004, 11.025694)
+
+[node name="Node3D592" parent="SubViewportContainer/SubViewport/trees" unique_id=1722642233 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.058881205, 0, -0.085219555, 0, 2.0987065, 0, 0.095511995, 0, -0.052536123, 3.214084, 16.407978, 12.014093)
+
+[node name="Node3D593" parent="SubViewportContainer/SubViewport/trees" unique_id=1403124230 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.058881205, 0, -0.085219555, 0, 2.0987065, 0, 0.095511995, 0, -0.052536123, 5.609328, 16.407978, 12.035178)
+
+[node name="Node3D594" parent="SubViewportContainer/SubViewport/trees" unique_id=663483886 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.0395008, 0, -0.06310156, 0, 1.3457536, 0, 0.06407475, 0, -0.03890082, 4.4295273, 11.128004, 11.202438)
+
+[node name="Node3D595" parent="SubViewportContainer/SubViewport/trees" unique_id=42166620 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.0395008, 0, -0.06310156, 0, 1.3457536, 0, 0.06407475, 0, -0.03890082, 3.1981995, 11.128004, 11.478129)
+
+[node name="Node3D596" parent="SubViewportContainer/SubViewport/trees" unique_id=2015581157 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.0395008, 0, -0.06310156, 0, 1.3457536, 0, 0.06407475, 0, -0.03890082, 2.1411183, 11.510782, 8.934866)
+
+[node name="Node3D597" parent="SubViewportContainer/SubViewport/trees" unique_id=1971884004 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.058881205, 0, -0.085219555, 0, 2.0987065, 0, 0.095511995, 0, -0.052536123, 4.5548363, 16.790756, 8.47324)
+
+[node name="Node3D598" parent="SubViewportContainer/SubViewport/trees" unique_id=930284466 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.0395008, 0, -0.06310156, 0, 1.3457536, 0, 0.06407475, 0, -0.03890082, 3.1279335, 11.510782, 8.744518)
+
+[node name="Node3D599" parent="SubViewportContainer/SubViewport/trees" unique_id=89438257 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.058881205, 0, -0.085219555, 0, 2.0987065, 0, 0.095511995, 0, -0.052536123, 3.037236, 16.790756, 9.732918)
+
+[node name="Node3D600" parent="SubViewportContainer/SubViewport/trees" unique_id=280168572 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.0395008, 0, -0.06310156, 0, 1.3457536, 0, 0.06407475, 0, -0.03890082, 4.746488, 11.510782, 8.8899765)
+
+[node name="Node3D601" parent="SubViewportContainer/SubViewport/trees" unique_id=57844958 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.0395008, 0, -0.06310156, 0, 1.3457536, 0, 0.06407475, 0, -0.03890082, 3.0213518, 11.510782, 9.196956)
+
+[node name="Node3D602" parent="SubViewportContainer/SubViewport/trees" unique_id=277245705 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.058881205, 0, -0.085219555, 0, 2.0987065, 0, 0.095511995, 0, -0.052536123, 5.1985664, 16.407978, 6.025847)
+
+[node name="Node3D603" parent="SubViewportContainer/SubViewport/trees" unique_id=1850815614 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.0395008, 0, -0.06310156, 0, 1.3457536, 0, 0.06407475, 0, -0.03890082, 2.942273, 11.128004, 6.3496723)
+
+[node name="Node3D604" parent="SubViewportContainer/SubViewport/trees" unique_id=881013607 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.058881205, 0, -0.085219555, 0, 2.0987065, 0, 0.095511995, 0, -0.052536123, 2.8515747, 16.407978, 7.338073)
+
+[node name="Node3D605" parent="SubViewportContainer/SubViewport/trees" unique_id=170881722 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.058881205, 0, -0.085219555, 0, 2.0987065, 0, 0.095511995, 0, -0.052536123, 5.1528354, 16.407978, 7.365113)
+
+[node name="Node3D606" parent="SubViewportContainer/SubViewport/trees" unique_id=1067131411 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.0395008, 0, -0.06310156, 0, 1.3457536, 0, 0.06407475, 0, -0.03890082, 4.0670195, 11.128004, 6.526417)
+
+[node name="Node3D607" parent="SubViewportContainer/SubViewport/trees" unique_id=1113531618 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(-0.0395008, 0, -0.06310156, 0, 1.3457536, 0, 0.06407475, 0, -0.03890082, 2.8356917, 11.128004, 6.802111)
+
+[node name="Node3D608" parent="SubViewportContainer/SubViewport/trees" unique_id=949265836 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -0.36481944, 11.510782, 14.841247)
+
+[node name="Node3D609" parent="SubViewportContainer/SubViewport/trees" unique_id=1794301547 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.091161706, 0, -0.05836555, 0, 2.098706, 0, 0.06541469, 0, 0.081338055, 0.719493, 12.297619, 14.992142)
+
+[node name="Node3D610" parent="SubViewportContainer/SubViewport/trees" unique_id=192896577 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.061156344, 0, -0.04321728, 0, 1.3457538, 0, 0.04388381, 0, 0.06022747, -0.014074257, 11.510782, 14.0657625)
+
+[node name="Node3D611" parent="SubViewportContainer/SubViewport/trees" unique_id=871852436 instance=ExtResource("7_8cxpi")]
+transform = Transform3D(0.049453527, 0, -0.018029185, 0, 0.35246283, 0, 0.035486247, 0, 0.025125412, 0.37990743, -3.1014917, 11.83449)
+
+[node name="Sketchfab_Scene" parent="SubViewportContainer/SubViewport/trees" unique_id=1136374466 instance=ExtResource("16_n2jt6")]
+transform = Transform3D(-6.3293917e-09, 0, -0.13090296, 0, 1.6089483, 0, 0.1447996, 0, -5.7219505e-09, 1.7251292, -0.12137699, 10.288519)
+
+[node name="Sketchfab_Scene2" parent="SubViewportContainer/SubViewport/trees" unique_id=1044152678 instance=ExtResource("16_n2jt6")]
+transform = Transform3D(-6.3293917e-09, 0, -0.13090296, 0, 1.6089483, 0, 0.1447996, 0, -5.7219505e-09, 1.7251292, -0.12137699, 14.462229)
+
+[node name="Sketchfab_Scene3" parent="SubViewportContainer/SubViewport/trees" unique_id=349394755 instance=ExtResource("16_n2jt6")]
+transform = Transform3D(-6.3293917e-09, 0, -0.13090296, 0, 1.6089483, 0, 0.1447996, 0, -5.7219505e-09, 1.7251292, -0.12137699, 18.667377)
+
+[node name="Sketchfab_Scene4" parent="SubViewportContainer/SubViewport/trees" unique_id=222120907 instance=ExtResource("16_n2jt6")]
+transform = Transform3D(-6.3293917e-09, 0, -0.13090296, 0, 1.6089483, 0, 0.1447996, 0, -5.7219505e-09, 1.7251292, -0.12137699, 22.841087)
+
+[node name="Sketchfab_Scene5" parent="SubViewportContainer/SubViewport/trees" unique_id=1283307833 instance=ExtResource("17_h75vw")]
+transform = Transform3D(0.113830715, 0, 0.10290621, 0, 1.7887485, 0, -0.11383072, 0, 0.10290621, -23.942553, -0.5503154, 10.675564)
+
 [node name="sidewalk" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=615560409]
 transform = Transform3D(11.111553, 0, 0, 0, 1, 0, 0, 0, 12.291154, 0, -0.94864297, 0)
-
-[node name="road" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/sidewalk" unique_id=845612433]
-transform = Transform3D(-6.4683843e-07, 0, 0.35827652, 0, 0.22451618, 0, -14.797941, 0, -1.5660765e-08, 0.7880525, 0.12659061, -7.7258635)
-material_override = SubResource("StandardMaterial3D_05x41")
-mesh = SubResource("BoxMesh_gqbix")
-skeleton = NodePath("../../../..")
-
-[node name="road2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/sidewalk" unique_id=623682571]
-transform = Transform3D(-2.2540898e-07, 0, 0.35827652, 0, 0.22451618, 0, -5.1567574, 0, -1.5660765e-08, 0.7880525, 0.12659061, 4.8600116)
-material_override = SubResource("StandardMaterial3D_05x41")
-mesh = SubResource("BoxMesh_gqbix")
-skeleton = NodePath("../../../..")
 
 [node name="school" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1699246913]
 transform = Transform3D(11.111553, 0, 0, 0, 1, 0, 0, 0, 12.291154, 0, -0.94864297, -108.80163)
@@ -1674,26 +2227,31 @@ transform = Transform3D(-9.509295e-08, -0.99999934, 0, 2.175473, -4.371136e-08, 
 material_override = SubResource("StandardMaterial3D_ooc2g")
 mesh = SubResource("PlaneMesh_2wwcf")
 
-[node name="canal" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=701501263]
-transform = Transform3D(11.111553, 0, 0, 0, 1, 0, 0, 0, 12.291154, 0, -0.94864297, 0)
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/wall" unique_id=41451973]
+transform = Transform3D(-9.509295e-08, -0.99999934, 0, 2.175473, -4.371136e-08, 0, 0, 0, 3.0516198, -0.77193326, 1.3093894, 16.329546)
+material_override = SubResource("StandardMaterial3D_ooc2g")
+mesh = SubResource("PlaneMesh_2wwcf")
 
-[node name="road3" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/canal" unique_id=1090646635]
-transform = Transform3D(-3.810951e-13, -0.024837168, 1.4046731e-07, 3.335744e-06, -1.0856671e-09, -3.213518, 25.437641, 0, 4.214021e-07, -0.36150378, -1.4998267, -5.83182)
-material_override = SubResource("StandardMaterial3D_wbpbn")
-mesh = SubResource("BoxMesh_gqbix")
-skeleton = NodePath("../../../..")
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/wall" unique_id=952024495]
+transform = Transform3D(4.156645e-15, 4.371136e-08, 3.0516195, 2.1754732, -4.3711363e-08, 0, 9.509295e-08, 0.9999994, -1.3339054e-07, -3.6557682, 1.3093894, 15.234626)
+visible = false
+material_override = SubResource("StandardMaterial3D_ooc2g")
+mesh = SubResource("PlaneMesh_2wwcf")
 
-[node name="road4" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/canal" unique_id=573309028]
-transform = Transform3D(-3.810951e-13, -0.024837168, 1.4046731e-07, 3.335744e-06, -1.0856671e-09, -3.213518, 25.437641, 0, 4.214021e-07, -0.5129609, -1.4998267, -5.83182)
-material_override = SubResource("StandardMaterial3D_wbpbn")
-mesh = SubResource("BoxMesh_gqbix")
-skeleton = NodePath("../../../..")
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/wall" unique_id=699870565]
+transform = Transform3D(-9.509295e-08, -0.99999934, 0, 2.175473, -4.371136e-08, 0, 0, 0, 3.0516198, 1.1391504, 1.3093894, 4.9829154)
+material_override = SubResource("StandardMaterial3D_ooc2g")
+mesh = SubResource("PlaneMesh_2wwcf")
 
-[node name="road5" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/canal" unique_id=102681103]
-transform = Transform3D(-3.3357442e-06, 2.17133e-09, -0.15164839, -1.6541448e-13, -0.024837116, -1.3257523e-08, 25.437647, 1.3693005e-23, -1.9886292e-08, -0.4454715, -0.651129, -5.83182)
-material_override = SubResource("StandardMaterial3D_a6rn7")
-mesh = SubResource("BoxMesh_gqbix")
-skeleton = NodePath("../../../..")
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/wall" unique_id=611504774]
+transform = Transform3D(-9.509295e-08, -0.99999934, 0, 2.175473, -4.371136e-08, 0, 0, 0, 3.0516198, -0.6674237, 1.3093894, 0.75338846)
+material_override = SubResource("StandardMaterial3D_ooc2g")
+mesh = SubResource("PlaneMesh_2wwcf")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/wall" unique_id=2146535846]
+transform = Transform3D(-9.509295e-08, -0.99999934, 0, 2.175473, -4.371136e-08, 0, 0, 0, 0.55735373, -0.77193326, 1.3093894, 11.394095)
+material_override = SubResource("StandardMaterial3D_ooc2g")
+mesh = SubResource("PlaneMesh_2wwcf")
 
 [node name="wall2" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=399868249]
 transform = Transform3D(11.111553, 0, 0, 0, 1, 0, 0, 0, 12.291154, 0, -0.94864297, 0)
@@ -1704,7 +2262,7 @@ material_override = SubResource("StandardMaterial3D_4on3e")
 mesh = SubResource("BoxMesh_sb2pt")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/wall2" unique_id=611408127]
-transform = Transform3D(0.05632191, 0, -3.813714, 0, 5.823816, 0, 0.020757034, 0, 10.34809, 1.3854318, 1.7732098, -21.477999)
+transform = Transform3D(0.035686605, 0, -8.867722, 0, 5.823815, 0, 0.04826466, 0, 6.556741, 3.7546215, 1.7732098, -19.970646)
 material_override = SubResource("StandardMaterial3D_4on3e")
 mesh = SubResource("BoxMesh_sb2pt")
 
@@ -1713,35 +2271,20 @@ transform = Transform3D(0.05632191, 0, -3.813714, 0, 5.823816, 0, 0.020757034, 0
 material_override = SubResource("StandardMaterial3D_4on3e")
 mesh = SubResource("BoxMesh_sb2pt")
 
-[node name="jeep5" parent="SubViewportContainer/SubViewport" unique_id=66504786 instance=ExtResource("3_ltf6m")]
-transform = Transform3D(-0.51555824, 0, -4.1817028e-08, 0, 0.4359437, 0, 4.985632e-08, 0, -0.52911067, -1.0587997, 0.4311869, -133.34892)
-
-[node name="jeep4" parent="SubViewportContainer/SubViewport" unique_id=664600661 instance=ExtResource("3_ltf6m")]
-transform = Transform3D(-0.51555824, 0, -4.1817028e-08, 0, 0.4359437, 0, 4.985632e-08, 0, -0.52911067, -1.1763926, 0.4311869, -161.68181)
-
-[node name="jeep2" parent="SubViewportContainer/SubViewport" unique_id=1823225146 instance=ExtResource("3_ltf6m")]
-transform = Transform3D(-0.51555824, 0, -4.1817028e-08, 0, 0.4359437, 0, 4.985632e-08, 0, -0.52911067, 7.1325426, 0.4311869, -119.80728)
-
-[node name="jeep3" parent="SubViewportContainer/SubViewport" unique_id=284381802 instance=ExtResource("3_ltf6m")]
-transform = Transform3D(-0.51378083, 0, -0.039684657, 0, 0.43594366, 0, 0.047313996, 0, -0.52728647, 6.4312243, 0.4311869, -106.64686)
+[node name="Node3D" parent="SubViewportContainer/SubViewport/wall2" unique_id=19198192 instance=ExtResource("21_y410r")]
+transform = Transform3D(-3.9338683e-09, 0, 0.08999642, 0, 1, 0, -0.08135933, 0, -3.5563292e-09, -0.5216108, 2.9006674, -8.494838)
 
 [node name="road" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1370999109]
 transform = Transform3D(11.111553, 0, 0, 0, 1, 0, 0, 0, 12.291154, 0, -0.94864297, 0)
 
 [node name="road" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/road" unique_id=134485296]
-transform = Transform3D(0.4908724, 0, 0, 0, 1, 0, 0, 0, 25.711914, 0.14102408, 0.100000024, 0)
-material_override = SubResource("StandardMaterial3D_urblq")
-mesh = SubResource("PlaneMesh_iw27f")
-skeleton = NodePath("../../../..")
-
-[node name="road2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/road" unique_id=1693031295]
-transform = Transform3D(1.5117965, 0, -1.6355807, 0, 1.0595295, 0, 0.61722964, 0, 4.0060697, 2.155, 0.01, -19.118)
-material_override = SubResource("StandardMaterial3D_urblq")
+transform = Transform3D(-8.6737913e-07, 0, -0.83378744, 0, 1, 0, 19.843323, 0, -3.644601e-08, 0.14102408, 0.100000024, 2.1446195)
+material_override = SubResource("StandardMaterial3D_a454a")
 mesh = SubResource("PlaneMesh_iw27f")
 skeleton = NodePath("../../../..")
 
 [node name="cafe" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=679480753]
-transform = Transform3D(11.111553, 0, 0, 0, 1, 0, 0, 0, 12.291154, 0, -0.94864297, 0)
+transform = Transform3D(11.111553, 0, 0, 0, 1, 0, 0, 0, 12.291154, 0.09056568, -0.94864297, -0.8368044)
 
 [node name="blockbench_export" parent="SubViewportContainer/SubViewport/cafe" unique_id=529460488 instance=ExtResource("1_rg57b")]
 transform = Transform3D(0.2558428, 0, 0, 0, 2.4317186, 0, 0, 0, 0.19840385, 0.10824968, 0, 0)
@@ -1794,9 +2337,48 @@ transform = Transform3D(-0.05348463, 0, 4.6920503e-09, 0, 0.061628114, 0, -5.172
 [node name="post4" parent="SubViewportContainer/SubViewport/post" unique_id=1866971485 instance=ExtResource("14_cwq17")]
 transform = Transform3D(-0.05348463, 0, 4.6920503e-09, 0, 0.061628114, 0, -5.1721547e-09, 0, -0.059368484, 10.026991, 1.2118528, -55.610764)
 
+[node name="wall3" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=558458873]
+transform = Transform3D(11.111553, 0, 0, 0, 1, 0, 0, 0, 12.291154, -79.55673, -0.94864297, 133.72046)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/wall3" unique_id=1863115588]
+transform = Transform3D(0.060025096, 0, 0, 0, 10.416573, 0, 0, 0, 7.257044, -0.5486841, 4.6930513, -3.6559052)
+material_override = SubResource("StandardMaterial3D_4on3e")
+mesh = SubResource("BoxMesh_sb2pt")
+
+[node name="Node3D" parent="SubViewportContainer/SubViewport/wall3" unique_id=376882718 instance=ExtResource("21_y410r")]
+transform = Transform3D(-3.9338683e-09, 0, 0.08999642, 0, 1, 0, -0.08135933, 0, -3.5563292e-09, -0.51695347, 2.9006674, -3.2058277)
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/wall3" unique_id=823012889]
+transform = Transform3D(-2.6237803e-09, 0, -7.2570443, 0, 10.416573, 0, 0.0600251, 0, -3.1721547e-07, 2.8865256, 4.6930513, -7.0655966)
+material_override = SubResource("StandardMaterial3D_4on3e")
+mesh = SubResource("BoxMesh_sb2pt")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/wall3" unique_id=1026733092]
+transform = Transform3D(-2.6237803e-09, 0, -7.2570443, 0, 10.416573, 0, 0.0600251, 0, -3.1721547e-07, 2.876926, 4.6930513, -0.013523102)
+material_override = SubResource("StandardMaterial3D_4on3e")
+mesh = SubResource("BoxMesh_sb2pt")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=844819138]
+transform = Transform3D(586.4986, 0, 0, 0, 0.74310964, 0, 0, 0, 492.5273, 583.1278, -0.94864297, 0)
+material_override = SubResource("StandardMaterial3D_yy28u")
+mesh = SubResource("PlaneMesh_wijl4")
+skeleton = NodePath("../../..")
+
+[node name="Sketchfab_Scene" parent="SubViewportContainer" unique_id=505761776 instance=ExtResource("26_qw8h8")]
+transform = Transform3D(1.9506354, 0, 0, 0, 1.9506354, 0, 0, 0, 1.9506354, -43.403492, -1.0891523, 89.09629)
+
+[node name="road2" type="MeshInstance3D" parent="SubViewportContainer/Sketchfab_Scene" unique_id=1509181946]
+transform = Transform3D(-9.806671e-07, 0, -21.878208, 0, 1.0595295, 0, 22.435055, 0, -9.563266e-07, -2.9233189, 0.089999944, 0.48398972)
+material_override = SubResource("StandardMaterial3D_urblq")
+mesh = SubResource("PlaneMesh_iw27f")
+skeleton = NodePath("../../../..")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1998087348]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.535095, -1.0789068, -84.25635)
 shape = SubResource("BoxShape3D_4sf5t")
+
+[node name="3d  house" parent="." unique_id=1863750021 instance=ExtResource("27_meq34")]
+transform = Transform3D(-2.193948e-08, 0, 0.5019168, 0, 0.5019168, 0, -0.5019168, 0, -2.193948e-08, -255.17827, -4.9952087, 179.91553)
 
 [connection signal="body_entered" from="SubViewportContainer/SubViewport/CafeGhostTrigger" to="SubViewportContainer/SubViewport/CafeGhostTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="SubViewportContainer/SubViewport/OfficeTrigger" to="SubViewportContainer/SubViewport/OfficeTrigger" method="_on_body_entered"]
