@@ -21,12 +21,15 @@
 [ext_resource type="Script" uid="uid://nj601x34n7f2" path="res://Scripts/OfficeTrigger.cs" id="17_1xwpj"]
 [ext_resource type="PackedScene" uid="uid://hrctldu2wtx7" path="res://Assets/Areas/model/lowpoly_shed.glb" id="17_h75vw"]
 [ext_resource type="Script" uid="uid://dhnow6mrljpx5" path="res://Scripts/PssTrigger.cs" id="18_pmuo0"]
+[ext_resource type="Script" uid="uid://bswmg3p0d6qdk" path="res://Scripts/FlickerLight.cs" id="29_flick"]
 [ext_resource type="PackedScene" uid="uid://dpwq8cfpxdoqt" path="res://Assets/Areas/model/man.gltf" id="19_gg4i5"]
 [ext_resource type="Texture2D" uid="uid://bju05luog0xdw" path="res://Assets/Areas/model/tindahan.jpg" id="20_natfk"]
 [ext_resource type="PackedScene" uid="uid://duovg3vo3475h" path="res://Scenes/Outdoor/sipsipPozonegro.tscn" id="21_y410r"]
 [ext_resource type="Texture2D" uid="uid://cn2osv7m5o3p7" path="res://Assets/Areas/model/177-highway-road-pbr-texture-seamless.jpg" id="23_7vxqa"]
 [ext_resource type="PackedScene" uid="uid://f8htyd35epsl" path="res://Assets/Areas/model/lowpoly_gas_station.glb" id="26_qw8h8"]
 [ext_resource type="PackedScene" uid="uid://df2ivn768iuce" path="res://Assets/Areas/model/3d  house.glb" id="27_meq34"]
+[ext_resource type="PackedScene" uid="uid://bakoinmhnih3n" path="res://Scenes/Selling.tscn" id="28_n2jt6"]
+[ext_resource type="Script" uid="uid://b8iw6rhf2qr2c" path="res://Scripts/SellingAreaTrigger.cs" id="29_strig"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3mr0t"]
 size = Vector3(1.5842285, 3.102539, 32)
@@ -39,16 +42,20 @@ texture_filter = 0
 [sub_resource type="PlaneMesh" id="PlaneMesh_wijl4"]
 
 [sub_resource type="Environment" id="Environment_w1iwb"]
-background_color = Color(2.0214916e-06, 0.70024395, 0.5924044, 1)
-background_energy_multiplier = 2.93
-ambient_light_color = Color(1, 1, 1, 1)
+background_color = Color(0.005, 0.008, 0.03, 1)
+background_energy_multiplier = 0.2
+ambient_light_color = Color(0.04, 0.06, 0.14, 1)
+ambient_light_energy = 0.08
 glow_enabled = true
-glow_bloom = 0.12
-fog_light_color = Color(0.060948357, 0.06935282, 0.08406224, 1)
-volumetric_fog_density = 0.04
+glow_bloom = 0.08
+fog_light_color = Color(0.01, 0.015, 0.05, 1)
+volumetric_fog_density = 0.06
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4on3e"]
 size = Vector3(1, 3.6397705, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sell1"]
+size = Vector3(7.1484375, 3, 10.915039)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gqbix"]
 albedo_texture = ExtResource("6_1ye5v")
@@ -121,7 +128,7 @@ texture_filter = 0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4sf5t"]
 margin = 0.0
-size = Vector3(127.07019, 1, 268.5127)
+size = Vector3(127.07019, 1, 489.6151)
 
 [node name="map" type="StaticBody3D" unique_id=2128084856]
 
@@ -149,7 +156,7 @@ transform = Transform3D(1, -2.910383e-11, 1.8626451e-09, 0, 0.9998792, 0.0155502
 transform = Transform3D(1, 0, 0, -2.910383e-11, 0.9999999, 0, 1.8626451e-09, 0, 1, -0.3415985, 0.095599174, -0.67904663)
 
 [node name="CafeGhost" parent="SubViewportContainer/SubViewport" unique_id=1540978287 instance=ExtResource("2_jky6x")]
-transform = Transform3D(-0.4067367, 0, -0.9135454, 0, 1, 0, 0.9135454, 0, -0.4067367, 31.205507, -0.8698597, 12.863815)
+transform = Transform3D(-0.4067367, 0, -0.9135454, 0, 1, 0, 0.9135454, 0, -0.4067367, 31.205507, -0.8698597, 11.893546)
 
 [node name="CafeGhostTrigger" type="Area3D" parent="SubViewportContainer/SubViewport" unique_id=1314653573 node_paths=PackedStringArray("TargetGhost")]
 transform = Transform3D(-0.9999567, 0, -0.009302475, 0, 1, 0, 0.009302475, 0, -0.9999567, 15.289776, 0, 20.219072)
@@ -176,7 +183,8 @@ skeleton = NodePath("../../..")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport" unique_id=809946170]
 transform = Transform3D(-0.87677824, 0.44841835, -0.173726, 0.24004169, 0.7211258, 0.6498903, 0.4167011, 0.5281082, -0.7399067, 0, 10.4601555, 0)
-light_energy = 1.944
+light_color = Color(0.7, 0.82, 1, 1)
+light_energy = 0.15
 light_indirect_energy = 0.0
 light_angular_distance = 4.02
 light_specular = 0.0
@@ -236,26 +244,62 @@ transform = Transform3D(11.111553, 0, 0, 0, 1, 0, 0, 0, 12.291154, 16.32349, -0.
 transform = Transform3D(11.111553, 0, 0, 0, 1, 0, 0, 0, 12.291154, 13.041868, -0.042029917, 19.54178)
 
 [node name="man" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1240627637]
-transform = Transform3D(11.111553, 0, 0, 0, 1, 0, 0, 0, 12.291154, 0, -0.94864297, 0)
+transform = Transform3D(11.111553, 0, 0, 0, 1, 0, 0, 0, 12.291154, 0.41095638, -0.94864297, 4.631508)
 
 [node name="blockbench_export" parent="SubViewportContainer/SubViewport/man" unique_id=1090943879 instance=ExtResource("19_gg4i5")]
 transform = Transform3D(-0.04266702, 0, 0.11392628, 0, 1.4423325, 0, -0.068366416, 0, -0.07110058, -0.63406897, 0.4401312, -3.484282)
 
-[node name="PssTrigger" type="Area3D" parent="SubViewportContainer/SubViewport" unique_id=1246218357 node_paths=PackedStringArray("ManNode")]
+[node name="CustomerPos" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1566216473]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7555887, 0, 89.85515)
+
+[node name="Customer1" type="Marker3D" parent="SubViewportContainer/SubViewport/CustomerPos" unique_id=1563505942]
+
+[node name="Customer2" type="Marker3D" parent="SubViewportContainer/SubViewport/CustomerPos" unique_id=981584162]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.3185577)
+
+[node name="Customer3" type="Marker3D" parent="SubViewportContainer/SubViewport/CustomerPos" unique_id=458328616]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.512665)
+
+[node name="CoinsPlaced" type="Marker3D" parent="SubViewportContainer/SubViewport/CustomerPos" unique_id=361480098]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.540227, -0.41165465, -7.3080444)
+
+[node name="PssTrigger" type="Area3D" parent="SubViewportContainer/SubViewport" unique_id=1246218357 node_paths=PackedStringArray("ManNode", "LookAtCorner", "NearbyLight")]
 transform = Transform3D(18.171848, 0, 0, 0, 1, 0, 0, 0, 12.291154, 2.7250395, -0.94864297, -76.41104)
 script = ExtResource("18_pmuo0")
 ManNode = NodePath("../man")
+LookAtCorner = NodePath("../LookAtTarget")
+NearbyLight = NodePath("../cafe/SpotLight3D2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/PssTrigger" unique_id=972955824]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3198853, 0)
 shape = SubResource("BoxShape3D_4on3e")
 
 [node name="LookAtTarget" type="Marker3D" parent="SubViewportContainer/SubViewport" unique_id=1094590051]
-transform = Transform3D(-1.978893e-06, 11.111554, 0, -4.074299, -4.371139e-08, 0, 0, 0, 17.932112, -9.378028, 3.2530525, -50.006145)
+transform = Transform3D(-1.978893e-06, 11.111554, 0, -4.074299, -4.371139e-08, 0, 0, 0, 17.932112, -6.089611, 2.1966984, -38.804462)
 gizmo_extents = 1.29
 
 [node name="PauwiTarget" type="Marker3D" parent="SubViewportContainer/SubViewport" unique_id=549308574]
-transform = Transform3D(11.111553, 0, 0, 0, 1, 0, 0, 0, 12.291154, 0, -0.94864297, -13.508859)
+transform = Transform3D(11.111553, 0, 0, 0, 1, 0, 0, 0, 12.291154, 1.7545748, -0.94864297, -18.33714)
+
+[node name="GasStationLookTarget" type="Marker3D" parent="SubViewportContainer/SubViewport" unique_id=-1994967295]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.477346, 2, 70)
+
+[node name="SellingDisplay" parent="SubViewportContainer/SubViewport" unique_id=-1994967292 instance=ExtResource("28_n2jt6")]
+transform = Transform3D(-0.005829345, 0, 0.999983, 0, 1, 0, -0.999983, 0, -0.005829345, -8.477346, -0.65115714, 84.81811)
+
+[node name="SellingAreaTrigger" type="Area3D" parent="SubViewportContainer/SubViewport" unique_id=-1994967294 node_paths=PackedStringArray("SellingDisplay", "Customer1Arrive", "Customer2Arrive", "Customer3Arrive", "CoinPlacedMarker")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.477346, 0.5, 84.81811)
+collision_layer = 0
+script = ExtResource("29_strig")
+SellingDisplay = NodePath("../SellingDisplay")
+Customer1Arrive = NodePath("../CustomerPos/Customer1")
+Customer2Arrive = NodePath("../CustomerPos/Customer2")
+Customer3Arrive = NodePath("../CustomerPos/Customer3")
+CoinPlacedMarker = NodePath("../CustomerPos/CoinsPlaced")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/SellingAreaTrigger" unique_id=-1994967293]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.57421875, 0, -2.4575195)
+shape = SubResource("BoxShape3D_sell1")
 
 [node name="tindahan" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=448959911]
 transform = Transform3D(11.111553, 0, 0, 0, 1, 0, 0, 0, 12.291154, 130.40228, -0.94864297, -108.80163)
@@ -303,6 +347,7 @@ max_distance = 101.95
 
 [node name="trees" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=902730286]
 transform = Transform3D(11.111553, 0, 0, 0, 1, 0, 0, 0, 12.291154, 0, -0.94864297, 0)
+metadata/_edit_lock_ = true
 
 [node name="Node3D" parent="SubViewportContainer/SubViewport/trees" unique_id=1314469543 instance=ExtResource("7_8cxpi")]
 transform = Transform3D(0.07527208, 0, 0, 0, 1.3457538, 0, 0, 0, 0.07412881, 1.2040595, 11.286524, 2.9376817)
@@ -2100,9 +2145,11 @@ transform = Transform3D(0.113830715, 0, 0.10290621, 0, 1.7887485, 0, -0.11383072
 
 [node name="sidewalk" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=615560409]
 transform = Transform3D(11.111553, 0, 0, 0, 1, 0, 0, 0, 12.291154, 0, -0.94864297, 0)
+metadata/_edit_lock_ = true
 
 [node name="school" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1699246913]
 transform = Transform3D(11.111553, 0, 0, 0, 1, 0, 0, 0, 12.291154, 0, -0.94864297, -108.80163)
+metadata/_edit_lock_ = true
 
 [node name="ground" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/school" unique_id=1405028506]
 transform = Transform3D(1.1355331e-06, 0, -4.9157724, 0, 0.22451618, 0, 8.659324, 0, 6.446257e-07, 3.387, 0.100000024, -2.889782)
@@ -2216,6 +2263,7 @@ mesh = SubResource("PrismMesh_wbpbn")
 
 [node name="wall" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=4426564]
 transform = Transform3D(11.111553, 0, 0, 0, 1, 0, 0, 0, 12.291154, 0, -0.94864297, 0)
+metadata/_edit_lock_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/wall" unique_id=1884938169]
 transform = Transform3D(-9.509295e-08, -0.99999934, 0, 2.175473, -4.371136e-08, 0, 0, 0, 3.0516198, 0.99971884, 1.3093894, -4.024314)
@@ -2255,6 +2303,7 @@ mesh = SubResource("PlaneMesh_2wwcf")
 
 [node name="wall2" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=399868249]
 transform = Transform3D(11.111553, 0, 0, 0, 1, 0, 0, 0, 12.291154, 0, -0.94864297, 0)
+metadata/_edit_lock_ = true
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/wall2" unique_id=1128928483]
 transform = Transform3D(0.060025096, 0, 0, 0, 5.8238163, 0, 0, 0, 11.028481, -0.5533412, 1.7732098, -10.79869)
@@ -2276,6 +2325,7 @@ transform = Transform3D(-3.9338683e-09, 0, 0.08999642, 0, 1, 0, -0.08135933, 0, 
 
 [node name="road" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1370999109]
 transform = Transform3D(11.111553, 0, 0, 0, 1, 0, 0, 0, 12.291154, 0, -0.94864297, 0)
+metadata/_edit_lock_ = true
 
 [node name="road" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/road" unique_id=134485296]
 transform = Transform3D(-8.6737913e-07, 0, -0.83378744, 0, 1, 0, 19.843323, 0, -3.644601e-08, 0.14102408, 0.100000024, 2.1446195)
@@ -2299,13 +2349,13 @@ omni_shadow_mode = 0
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="SubViewportContainer/SubViewport/cafe" unique_id=1904672579]
 transform = Transform3D(0.08999641, 2.7637152e-05, 1.2459396e-05, -0.00014023221, 0.0058332114, 0.999983, 2.4918643e-05, -0.08135794, 0.00047458964, 1.7977668, 6.855112, 0.59724456)
+script = ExtResource("29_flick")
 light_energy = 3.715
 distance_fade_enabled = true
 spot_range = 19.714891
 spot_angle = 82.97756
 
 [node name="post" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1051420465]
-visible = false
 
 [node name="post10" parent="SubViewportContainer/SubViewport/post" unique_id=672842124 instance=ExtResource("14_cwq17")]
 transform = Transform3D(0.05348463, 0, -9.384101e-09, 0, 0.061628114, 0, 1.034431e-08, 0, 0.059368484, -5.809637, 1.2118528, -103.00427)
@@ -2337,8 +2387,37 @@ transform = Transform3D(-0.05348463, 0, 4.6920503e-09, 0, 0.061628114, 0, -5.172
 [node name="post4" parent="SubViewportContainer/SubViewport/post" unique_id=1866971485 instance=ExtResource("14_cwq17")]
 transform = Transform3D(-0.05348463, 0, 4.6920503e-09, 0, 0.061628114, 0, -5.1721547e-09, 0, -0.059368484, 10.026991, 1.2118528, -55.610764)
 
+[node name="post" type="Node3D" parent="SubViewportContainer/SubViewport/post" unique_id=267048246]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 226.5715)
+
+[node name="post10" parent="SubViewportContainer/SubViewport/post/post" unique_id=927780716 instance=ExtResource("14_cwq17")]
+transform = Transform3D(0.05348463, 0, -9.384101e-09, 0, 0.061628114, 0, 1.034431e-08, 0, 0.059368484, -5.809637, 1.2118528, -103.00427)
+visible = false
+
+[node name="post5" parent="SubViewportContainer/SubViewport/post/post" unique_id=843037287 instance=ExtResource("14_cwq17")]
+transform = Transform3D(-0.05348463, 0, 4.6920503e-09, 0, 0.061628114, 0, -5.1721547e-09, 0, -0.059368484, 10.026991, 1.2118528, -33.406242)
+
+[node name="post6" parent="SubViewportContainer/SubViewport/post/post" unique_id=928233457 instance=ExtResource("14_cwq17")]
+transform = Transform3D(-0.05348463, 0, 4.6920503e-09, 0, 0.061628114, 0, -5.1721547e-09, 0, -0.059368484, 10.026991, 1.2118528, 29.91766)
+
+[node name="post7" parent="SubViewportContainer/SubViewport/post/post" unique_id=648273197 instance=ExtResource("14_cwq17")]
+transform = Transform3D(0.05348463, 0, -9.384101e-09, 0, 0.061628114, 0, 1.034431e-08, 0, 0.059368484, -5.809637, 1.2118528, -2.028679)
+
+[node name="post8" parent="SubViewportContainer/SubViewport/post/post" unique_id=1974813062 instance=ExtResource("14_cwq17")]
+transform = Transform3D(0.05348463, 0, -9.384101e-09, 0, 0.061628114, 0, 1.034431e-08, 0, 0.059368484, -5.809637, 1.2118528, -64.07813)
+
+[node name="post2" parent="SubViewportContainer/SubViewport/post/post" unique_id=208061329 instance=ExtResource("14_cwq17")]
+transform = Transform3D(-0.05348463, 0, 4.6920503e-09, 0, 0.061628114, 0, -5.1721547e-09, 0, -0.059368484, 10.026991, 1.2118528, -137.44159)
+
+[node name="post3" parent="SubViewportContainer/SubViewport/post/post" unique_id=589378127 instance=ExtResource("14_cwq17")]
+transform = Transform3D(-0.05348463, 0, 4.6920503e-09, 0, 0.061628114, 0, -5.1721547e-09, 0, -0.059368484, 10.026991, 1.2118528, -77.838844)
+
+[node name="post4" parent="SubViewportContainer/SubViewport/post/post" unique_id=1907924838 instance=ExtResource("14_cwq17")]
+transform = Transform3D(-0.05348463, 0, 4.6920503e-09, 0, 0.061628114, 0, -5.1721547e-09, 0, -0.059368484, 10.026991, 1.2118528, -55.610764)
+
 [node name="wall3" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=558458873]
 transform = Transform3D(11.111553, 0, 0, 0, 1, 0, 0, 0, 12.291154, -79.55673, -0.94864297, 133.72046)
+metadata/_edit_lock_ = true
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/wall3" unique_id=1863115588]
 transform = Transform3D(0.060025096, 0, 0, 0, 10.416573, 0, 0, 0, 7.257044, -0.5486841, 4.6930513, -3.6559052)
@@ -2364,6 +2443,227 @@ material_override = SubResource("StandardMaterial3D_yy28u")
 mesh = SubResource("PlaneMesh_wijl4")
 skeleton = NodePath("../../..")
 
+[node name="GasStationLights" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1005049458]
+
+[node name="Store" type="SpotLight3D" parent="SubViewportContainer/SubViewport/GasStationLights" unique_id=1376406873 groups=["flicker_lights"]]
+transform = Transform3D(-0.99107367, 0.13270609, 0.012731681, 0.0142017435, 0.0101369275, 0.99984777, 0.13255683, 0.9911036, -0.0119311, -43.529995, 7.1333694, 84.82577)
+layers = 1023
+light_energy = 8.079
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 1.0
+light_specular = 0.0
+shadow_enabled = true
+spot_range = 28.989
+spot_attenuation = 0.8
+spot_angle = 28.71
+
+[node name="Store2" type="SpotLight3D" parent="SubViewportContainer/SubViewport/GasStationLights" unique_id=499826355 groups=["flicker_lights"]]
+transform = Transform3D(-0.99107367, 0.13270609, 0.012731681, 0.0142017435, 0.0101369275, 0.99984777, 0.13255683, 0.9911036, -0.0119311, -43.529995, 7.1333694, 94.67399)
+layers = 1023
+light_energy = 8.079
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 1.0
+light_specular = 0.0
+shadow_enabled = true
+spot_range = 28.989
+spot_attenuation = 0.8
+spot_angle = 28.71
+
+[node name="GasOut" type="SpotLight3D" parent="SubViewportContainer/SubViewport/GasStationLights" unique_id=1766674652 groups=["flicker_lights"]]
+transform = Transform3D(-0.99107367, 0.13270609, 0.012731681, 0.0142017435, 0.0101369275, 0.99984777, 0.13255683, 0.9911036, -0.0119311, -17.021114, 15.708112, 75.33961)
+layers = 1023
+light_energy = 8.079
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 1.0
+light_specular = 0.0
+shadow_enabled = true
+spot_range = 28.989
+spot_attenuation = 0.8
+spot_angle = 75.36
+
+[node name="SpotLight3D10" type="SpotLight3D" parent="SubViewportContainer/SubViewport/GasStationLights/GasOut" unique_id=1062976345 groups=["flicker_lights"]]
+transform = Transform3D(0.9644611, -0.26263195, -0.028971143, -0.26334962, -0.964388, -0.024553169, -0.021490974, 0.03131011, -0.99927866, 0, 0, 0)
+layers = 1023
+light_energy = 8.079
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 1.0
+light_specular = 0.0
+shadow_enabled = true
+spot_range = 24.851
+spot_attenuation = 0.06
+spot_angle = 17.03
+
+[node name="GasOut2" type="SpotLight3D" parent="SubViewportContainer/SubViewport/GasStationLights" unique_id=1720408638 groups=["flicker_lights"]]
+transform = Transform3D(-0.99107367, 0.13270609, 0.012731681, 0.0142017435, 0.0101369275, 0.99984777, 0.13255683, 0.9911036, -0.0119311, -17.021114, 15.708112, 104.37871)
+layers = 1023
+light_energy = 8.079
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 1.0
+light_specular = 0.0
+shadow_enabled = true
+spot_range = 28.989
+spot_attenuation = 0.8
+spot_angle = 75.36
+
+[node name="SpotLight3D11" type="SpotLight3D" parent="SubViewportContainer/SubViewport/GasStationLights/GasOut2" unique_id=1650363917 groups=["flicker_lights"]]
+transform = Transform3D(0.96445405, -0.26299915, -0.025685314, -0.26308542, -0.9647726, 2.3553148e-05, -0.024786685, 0.0067347214, -0.99966997, 0.002073288, 0.0154953, -0.00018692017)
+layers = 1023
+light_energy = 8.079
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 1.0
+light_specular = 0.0
+shadow_enabled = true
+spot_range = 24.851
+spot_attenuation = 0.06
+spot_angle = 17.03
+
+[node name="GasOut3" type="SpotLight3D" parent="SubViewportContainer/SubViewport/GasStationLights" unique_id=1676282701 groups=["flicker_lights"]]
+transform = Transform3D(-0.86393285, 0.10963103, -0.4915294, -0.48584867, 0.075463265, 0.87077945, 0.13255684, 0.9911037, -0.011931101, -16.910603, 15.7138, 89.553314)
+layers = 1023
+light_energy = 8.079
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 1.0
+light_specular = 0.0
+shadow_enabled = true
+spot_range = 28.989
+spot_attenuation = 0.8
+spot_angle = 27.93
+
+[node name="SpotLight3D12" type="SpotLight3D" parent="SubViewportContainer/SubViewport/GasStationLights/GasOut3" unique_id=2000832291 groups=["flicker_lights"]]
+transform = Transform3D(0.9404879, -0.25766093, 0.22157016, -0.25690383, -0.9658823, -0.032744184, 0.22244754, -0.026126705, -0.97459453, 0.10923576, -0.0033950806, 0.020462036)
+layers = 1023
+light_energy = 8.079
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 1.0
+light_specular = 0.0
+shadow_enabled = true
+spot_range = 24.851
+spot_attenuation = 0.06
+spot_angle = 17.03
+
+[node name="SignLights" type="Node3D" parent="SubViewportContainer/SubViewport/GasStationLights" unique_id=1596805813]
+
+[node name="Green" type="SpotLight3D" parent="SubViewportContainer/SubViewport/GasStationLights/SignLights" unique_id=1190941761 groups=["flicker_lights"]]
+transform = Transform3D(-0.99964535, 0.02418334, 0.01115305, 0.024350777, 0.99958897, 0.015129339, -0.010782588, 0.0153955575, -0.9998234, -9.726085, 9.007359, 86.21332)
+layers = 1023
+light_color = Color(0.11764706, 0.7411765, 0.36862746, 1)
+light_energy = 15.564
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 1.0
+light_specular = 0.0
+shadow_enabled = true
+spot_range = 4.744572
+spot_attenuation = 0.2
+spot_angle = 12.415607
+
+[node name="Blue" type="SpotLight3D" parent="SubViewportContainer/SubViewport/GasStationLights/SignLights" unique_id=1354109441 groups=["flicker_lights"]]
+transform = Transform3D(-0.99964535, 0.02418334, 0.01115305, 0.024350777, 0.99958897, 0.01512934, -0.010782588, 0.0153955575, -0.9998234, -9.726085, 7.9335976, 86.21332)
+layers = 1023
+light_color = Color(0, 0.5185363, 0.87760687, 1)
+light_energy = 15.564
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 1.0
+light_specular = 0.0
+shadow_enabled = true
+spot_range = 4.744572
+spot_attenuation = 0.2
+spot_angle = 12.415607
+
+[node name="Orange" type="SpotLight3D" parent="SubViewportContainer/SubViewport/GasStationLights/SignLights" unique_id=1207850547 groups=["flicker_lights"]]
+transform = Transform3D(-0.99964535, 0.02418334, 0.011153051, 0.024350777, 0.99958897, 0.015129339, -0.010782588, 0.0153955575, -0.9998234, -9.726085, 6.845684, 86.21332)
+layers = 1023
+light_color = Color(0.85188454, 0.43651745, 1.92523e-07, 1)
+light_energy = 15.564
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 1.0
+light_specular = 0.0
+shadow_enabled = true
+spot_range = 4.744572
+spot_attenuation = 0.2
+spot_angle = 12.415607
+
+[node name="White" type="SpotLight3D" parent="SubViewportContainer/SubViewport/GasStationLights/SignLights" unique_id=279479420 groups=["flicker_lights"]]
+transform = Transform3D(-0.9383052, -0.028655237, 0.34461907, -0.3425669, 0.21315217, -0.91499406, -0.047236927, -0.97659874, -0.20981811, -6.6295056, 5.9152665, 86.731)
+layers = 1023
+light_energy = 15.564
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 1.0
+light_specular = 0.0
+shadow_enabled = true
+spot_range = 12.456017
+spot_attenuation = 0.89
+spot_angle = 76.02
+
+[node name="SignLights2" type="Node3D" parent="SubViewportContainer/SubViewport/GasStationLights" unique_id=1115686212]
+transform = Transform3D(-0.9999884, 0, -0.0048170984, 0, 1, 0, 0.0048170984, 0, -0.9999884, -17.070082, 0, 180.0073)
+
+[node name="Green" type="SpotLight3D" parent="SubViewportContainer/SubViewport/GasStationLights/SignLights2" unique_id=1729156020 groups=["flicker_lights"]]
+transform = Transform3D(-0.99964535, 0.02418334, 0.01115305, 0.024350777, 0.99958897, 0.015129339, -0.010782588, 0.0153955575, -0.9998234, -9.726085, 9.007359, 86.21332)
+layers = 1023
+light_color = Color(0.11764706, 0.7411765, 0.36862746, 1)
+light_energy = 15.564
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 1.0
+light_specular = 0.0
+shadow_enabled = true
+spot_range = 4.744572
+spot_attenuation = 0.2
+spot_angle = 12.415607
+
+[node name="Blue" type="SpotLight3D" parent="SubViewportContainer/SubViewport/GasStationLights/SignLights2" unique_id=147242281 groups=["flicker_lights"]]
+transform = Transform3D(-0.99964535, 0.02418334, 0.01115305, 0.024350777, 0.99958897, 0.01512934, -0.010782588, 0.0153955575, -0.9998234, -9.726085, 7.9335976, 86.21332)
+layers = 1023
+light_color = Color(0, 0.5185363, 0.87760687, 1)
+light_energy = 15.564
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 1.0
+light_specular = 0.0
+shadow_enabled = true
+spot_range = 4.744572
+spot_attenuation = 0.2
+spot_angle = 12.415607
+
+[node name="Orange" type="SpotLight3D" parent="SubViewportContainer/SubViewport/GasStationLights/SignLights2" unique_id=1013152496 groups=["flicker_lights"]]
+transform = Transform3D(-0.99964535, 0.02418334, 0.011153051, 0.024350777, 0.99958897, 0.015129339, -0.010782588, 0.0153955575, -0.9998234, -9.726085, 6.845684, 86.21332)
+layers = 1023
+light_color = Color(0.85188454, 0.43651745, 1.92523e-07, 1)
+light_energy = 15.564
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 1.0
+light_specular = 0.0
+shadow_enabled = true
+spot_range = 4.744572
+spot_attenuation = 0.2
+spot_angle = 12.415607
+
+[node name="White" type="SpotLight3D" parent="SubViewportContainer/SubViewport/GasStationLights/SignLights2" unique_id=2086345361 groups=["flicker_lights"]]
+transform = Transform3D(-0.9383052, -0.028655237, 0.34461907, -0.3425669, 0.21315217, -0.91499406, -0.047236927, -0.97659874, -0.20981811, -6.6295056, 5.9152665, 86.731)
+layers = 1023
+light_energy = 15.564
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_size = 1.0
+light_specular = 0.0
+shadow_enabled = true
+spot_range = 12.456017
+spot_attenuation = 0.89
+spot_angle = 76.02
+
 [node name="Sketchfab_Scene" parent="SubViewportContainer" unique_id=505761776 instance=ExtResource("26_qw8h8")]
 transform = Transform3D(1.9506354, 0, 0, 0, 1.9506354, 0, 0, 0, 1.9506354, -43.403492, -1.0891523, 89.09629)
 
@@ -2374,7 +2674,7 @@ mesh = SubResource("PlaneMesh_iw27f")
 skeleton = NodePath("../../../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1998087348]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.535095, -1.0789068, -84.25635)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.535095, -1.0789068, 26.29486)
 shape = SubResource("BoxShape3D_4sf5t")
 
 [node name="3d  house" parent="." unique_id=1863750021 instance=ExtResource("27_meq34")]
@@ -2383,6 +2683,7 @@ transform = Transform3D(-2.193948e-08, 0, 0.5019168, 0, 0.5019168, 0, -0.5019168
 [connection signal="body_entered" from="SubViewportContainer/SubViewport/CafeGhostTrigger" to="SubViewportContainer/SubViewport/CafeGhostTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="SubViewportContainer/SubViewport/OfficeTrigger" to="SubViewportContainer/SubViewport/OfficeTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="SubViewportContainer/SubViewport/PssTrigger" to="SubViewportContainer/SubViewport/PssTrigger" method="_on_body_entered"]
+[connection signal="body_entered" from="SubViewportContainer/SubViewport/SellingAreaTrigger" to="SubViewportContainer/SubViewport/SellingAreaTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="SubViewportContainer/SubViewport/tindahan/TindahanAudioTrigger" to="SubViewportContainer/SubViewport/tindahan/TindahanAudioTrigger" method="_on_body_entered"]
 
 [editable path="SubViewportContainer/SubViewport/PlayerPackage"]

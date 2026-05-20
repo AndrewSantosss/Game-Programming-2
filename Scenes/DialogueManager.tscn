@@ -25,6 +25,5 @@ offset_top = 86.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 7
-text = "Testing\\"
 horizontal_alignment = 1
 vertical_alignment = 1

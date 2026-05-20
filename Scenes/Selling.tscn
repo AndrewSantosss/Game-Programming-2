@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://bakoinmhnih3n"]
+
+[ext_resource type="PackedScene" uid="uid://hv4xbrlv2qjq" path="res://Assets/Items/3_antique_chinese_basket_3_tier.glb" id="1_dc1id"]
+[ext_resource type="PackedScene" uid="uid://mkk88bs7283j" path="res://Assets/Items/mat.glb" id="2_gbxnx"]
+[ext_resource type="PackedScene" uid="uid://bpheova2sjfrl" path="res://Assets/Items/small_chest.glb" id="3_wmq5s"]
+[ext_resource type="PackedScene" uid="uid://cw4nx2t3hapmc" path="res://Assets/Items/lenco_dos_namorados_portugal.glb" id="4_sns2o"]
+[ext_resource type="PackedScene" uid="uid://c3d6qltu2lkin" path="res://Scenes/Eggs.tscn" id="5_gbxnx"]
+[ext_resource type="Texture2D" uid="uid://2tva8hlpo0cv" path="res://Assets/Items/free-photo-of-close-up-of-brown-chicken-eggs-in-indonesia.jpeg" id="6_wmq5s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sns2o"]
+albedo_texture = ExtResource("6_wmq5s")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_s7jwh"]
+
+[node name="Selling" type="Node3D" unique_id=1934351975]
+
+[node name="Sketchfab_Scene" parent="." unique_id=353671354 instance=ExtResource("1_dc1id")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08560455, 1.1920929e-07, -0.014823914)
+
+[node name="9c1dc02582644756814e33494357cff9_fbx" parent="Sketchfab_Scene/Sketchfab_model" parent_id_path=PackedInt32Array(353671354, 829075077) index="0" unique_id=822305671]
+transform = Transform3D(0.01, 0, 0, 0, 0, -0.01, 0, 0.01, 0, -3.4900494, 0, 0)
+
+[node name="RootNode" parent="Sketchfab_Scene/Sketchfab_model/9c1dc02582644756814e33494357cff9_fbx" index="0" unique_id=1921342846]
+transform = Transform3D(2.0153978, 0, 0, 0, 1.9233576, 0, 0, 0, 1.8787676, -1689.6426, 0, 773.25867)
+
+[node name="Basket Top" parent="Sketchfab_Scene/Sketchfab_model/9c1dc02582644756814e33494357cff9_fbx/RootNode" index="0" unique_id=1104129007]
+transform = Transform3D(68.59906, -35.832203, -1.600658e-06, 0, -3.336251e-06, 77.99999, -36.47477, -67.39055, -3.0103993e-06, -867.683, -3.9999998, -30.76767)
+
+[node name="Basket Top_Material0_005_0" parent="Sketchfab_Scene/Sketchfab_model/9c1dc02582644756814e33494357cff9_fbx/RootNode/Basket Top" index="0" unique_id=1519262102]
+transform = Transform3D(1.0000004, -5.9604645e-08, 0, 2.9802322e-08, 1.0000004, 0, 3.5527137e-15, 3.5527137e-15, 1.0000004, 9.752811, -5.2786565, 0.22339165)
+
+[node name="Sketchfab_Scene2" parent="." unique_id=709259936 instance=ExtResource("2_gbxnx")]
+transform = Transform3D(2.0118835, 0, 0, 0, 1, 0, 0, 0, 2.1548426, 0.62085223, 0, -0.4096794)
+
+[node name="Sketchfab_model" parent="Sketchfab_Scene2" index="0" unique_id=185004707]
+transform = Transform3D(1.2877665, 0, 0, 0, 2.220446e-16, 1.2821538, 0, -1, 2.8469534e-16, 0, 0, 0)
+
+[node name="L_M_Mat_0" parent="Sketchfab_Scene2/Sketchfab_model/SM_Mat_FBX/RootNode/L/Object_4" parent_id_path=PackedInt32Array(709259936, 939557351) index="0" unique_id=1886126265]
+transform = Transform3D(2.0720458, 0, 0, 0, 1.7825563, 0, 0, -1.0587912e-22, 1, -0.112579346, -0.044750214, 0)
+lod_bias = 128.0
+
+[node name="Sketchfab_Scene3" parent="." unique_id=787591933 instance=ExtResource("3_wmq5s")]
+transform = Transform3D(-0.65778285, 0, -0.7532076, 0, 1, 0, 0.7532076, 0, -0.65778285, 0.8103893, 0.05314517, -0.041706443)
+
+[node name="Sketchfab_model" parent="Sketchfab_Scene3" index="0" unique_id=588247624]
+transform = Transform3D(0.4579901, 0.023617938, -0.018348902, -0.012236706, 0.47933367, 0.17222849, 0.025174186, -0.19668177, 0.41753513, 0.00067567825, 0.01807677, 0.040682435)
+
+[node name="Model" parent="Sketchfab_Scene3/Sketchfab_model/small-chest_fbx/RootNode" parent_id_path=PackedInt32Array(787591933, 73427224) index="0" unique_id=1044788453]
+transform = Transform3D(398.03073, 0, -3.0517578e-05, -1.5258789e-05, -6.484985e-05, 376.67877, 5.340576e-05, -342.58, 6.866455e-05, -261.0972, -230.26874, -140.707)
+
+[node name="Sketchfab_Scene4" parent="." unique_id=2138929826 instance=ExtResource("4_sns2o")]
+transform = Transform3D(0.45118576, 0, 0, 0, 0.034116887, 0, 0, 0, 0.30734366, 2.0247717, 0.01012677, -0.13581026)
+
+[node name="Plane" parent="Sketchfab_Scene4/Sketchfab_model/752f6b40965f4b6297a36ecc0d7aba09_fbx/RootNode" parent_id_path=PackedInt32Array(2138929826, 1673966885) index="0" unique_id=692505932]
+transform = Transform3D(229.42438, 0, 0, 0, -5.1595875e-05, 100.00015, 0, -316.69327, -1.6292093e-05, 0, 0, 0)
+
+[node name="Selling" parent="." unique_id=1589686157 instance=ExtResource("5_gbxnx")]
+transform = Transform3D(1.0345803, 0, 0, 0, 1.1694777, 0, 0, 0, 0.998971, -1.2560126, 1.122608, -0.17692912)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Selling" unique_id=344911145]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.16051656, 0, 0, 0, 0.99999964, -0.11121595, -0.24695379, 0.6295533)
+material_override = SubResource("StandardMaterial3D_sns2o")
+lod_bias = 0.001
+mesh = SubResource("CylinderMesh_s7jwh")
+
+[editable path="Sketchfab_Scene"]
+[editable path="Sketchfab_Scene2"]
+[editable path="Sketchfab_Scene3"]
+[editable path="Sketchfab_Scene4"]

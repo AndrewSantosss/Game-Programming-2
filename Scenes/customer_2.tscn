@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://duuat7ed1rjp8"]
+
+[ext_resource type="PackedScene" uid="uid://dcjkkt6elx1v5" path="res://Assets/Customers/base_female_-_game_ready_-_rigged_-_low_poly.glb" id="1_qit4a"]
+[ext_resource type="Script" uid="uid://dpei1opnvfyb5" path="res://Scripts/CustomerWalk.cs" id="2_walkcs"]
+
+[node name="Customer2" type="Node3D" unique_id=19114474]
+transform = Transform3D(0.0016769804, 0, 1.347358, 0, 1.3439839, 0, -1.2478846, 0, 0.0018106662, 0, 0, 0)
+script = ExtResource("2_walkcs")
+
+[node name="Sketchfab_Scene" parent="." unique_id=484279712 instance=ExtResource("1_qit4a")]

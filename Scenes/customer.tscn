@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://begnyec35mopg"]
+
+[ext_resource type="PackedScene" uid="uid://btpowin0643r1" path="res://Assets/Customers/animated_low_poly_human_base_.glb" id="1_fp685"]
+[ext_resource type="Script" uid="uid://dpei1opnvfyb5" path="res://Scripts/CustomerWalk.cs" id="2_walkcs"]
+
+[node name="Customer" type="Node3D" unique_id=744379522]
+transform = Transform3D(-0.11927052, 0, 1.5055164, 0, 1.7194492, 0, -1.4513378, 0, -0.12372273, 0, 0, 0)
+script = ExtResource("2_walkcs")
+
+[node name="Sketchfab_Scene" parent="." unique_id=1967869437 instance=ExtResource("1_fp685")]
+transform = Transform3D(0.99731445, 0, -0.07323825, 0, 1, 0, 0.07323815, 0, 0.9973145, 0.0085350275, 0, -0.0020377636)
+
+[editable path="Sketchfab_Scene"]

@@ -37,6 +37,15 @@ public partial class GhostlyFigure : Node3D
         _isActive = true;
     }
 
+    // Use this instead of TriggerAppearance() for scripted cutscene sequences
+    // where the camera is forced toward the ghost — detection must stay off
+    // or OnSpotted fires immediately and QueueFrees the ghost before the scare.
+    public void ShowForCutscene()
+    {
+        Show();
+        // _isActive intentionally left false
+    }
+
     private void OnSpotted()
     {
         _isActive = false;

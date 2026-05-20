@@ -10,7 +10,7 @@ public partial class FlickerLight : SpotLight3D
     [Export] public float MaxEnergy = 4.0f;
     
     private bool _isFlickering = false;
-    private double _timer = 0.0;
+    private float _timer = 0.0f;
     private RandomNumberGenerator _rng = new RandomNumberGenerator();
 
     public override void _Ready()

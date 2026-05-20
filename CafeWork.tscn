@@ -3,20 +3,24 @@
 [ext_resource type="PackedScene" uid="uid://c7psjp33u27si" path="res://Scenes/PlayerPackage.tscn" id="1_ser54"]
 [ext_resource type="PackedScene" uid="uid://ch327wj1ou6w7" path="res://Scenes/cafe_ghost.tscn" id="3_8nl7u"]
 [ext_resource type="PackedScene" uid="uid://b5r4n38lj53dt" path="res://Scenes/Outdoor/sketchfab_scene.tscn" id="3_r1o7h"]
-[ext_resource type="PackedScene" uid="uid://c8yus3nl2fipy" path="res://Scenes/3d__house.tscn" id="4_r1o7h"]
 [ext_resource type="Texture2D" uid="uid://xe5xf78ipm5o" path="res://Assets/Areas/model/lilim_2.png" id="5_017q5"]
 [ext_resource type="Script" uid="uid://h7rr2bhvfbid" path="res://Scripts/DialogueManager.cs" id="6_o6x8k"]
-[ext_resource type="PackedScene" uid="uid://dpwq8cfpxdoqt" path="res://Assets/Areas/model/man.gltf" id="8_6sj2v"]
 [ext_resource type="Texture2D" uid="uid://crkytrxjbta4d" path="res://Assets/Areas/model/road.jpg" id="10_lsr3q"]
 [ext_resource type="PackedScene" uid="uid://duovg3vo3475h" path="res://Scenes/Outdoor/sipsipPozonegro.tscn" id="13_5lw2l"]
 [ext_resource type="PackedScene" uid="uid://dpxfggii4fmub" path="res://Scenes/post.tscn" id="14_jfqf3"]
 [ext_resource type="PackedScene" uid="uid://wfs0wqd7336g" path="res://Scenes/Outdoor/tree.tscn" id="15_6rckv"]
 [ext_resource type="Texture2D" uid="uid://bdojvhf4h88jy" path="res://Assets/Areas/model/sidewalk.jpg" id="16_eqwx5"]
+[ext_resource type="Script" uid="uid://c3vmdff6kwfvf" path="res://Scripts/CokeRefillInteractable.cs" id="16_kyrt8"]
 [ext_resource type="Script" uid="uid://ci8bfuoitl0uv" path="res://Scripts/CafeInteractable.cs" id="16_qjhbd"]
+[ext_resource type="PackedScene" uid="uid://c0xfm5i5ltfgu" path="res://Scenes/broom_wood_-_5mb.glb" id="16_w4vhx"]
 [ext_resource type="Script" uid="uid://dm1iuj6ytaksc" path="res://Scripts/CafeIntro.cs" id="17_w4vhx"]
+[ext_resource type="PackedScene" uid="uid://0jodrggv2cyf" path="res://Scenes/pile_of_trash_and_garbage_-_3_piece_set.glb" id="18_ctt2i"]
+[ext_resource type="Script" uid="uid://bito80pioiutp" path="res://Scripts/BroomInteractable.cs" id="18_kyrt8"]
 [ext_resource type="Texture2D" uid="uid://qhghq58h8dgd" path="res://Assets/Areas/model/Horror_Floor_06-128x128.png" id="19_s3ad8"]
 [ext_resource type="Texture2D" uid="uid://dyku6qa852ued" path="res://Assets/Areas/model/lilim_0.png" id="20_0o6pc"]
+[ext_resource type="Script" uid="uid://dieqrq0yajmr6" path="res://Scripts/TrashSweepInteractable.cs" id="20_ser54"]
 [ext_resource type="Texture2D" uid="uid://didc88chgp26i" path="res://Assets/Areas/model/Horror_Stone_12-128x128.png" id="21_8nw7t"]
+[ext_resource type="Script" uid="uid://dj7kpnv8ks3nf" path="res://Scripts/WorldInteractable.cs" id="21_v0tpj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p5pve"]
 albedo_texture = ExtResource("5_017q5")
@@ -78,8 +82,14 @@ texture_filter = 0
 [sub_resource type="BoxShape3D" id="BoxShape3D_8nl7u"]
 size = Vector3(1.5733643, 2.331543, 1.460022)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ser54"]
+size = Vector3(2.1271362, 1.7041016, 1.9624023)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_w4vhx"]
 size = Vector3(1, 3.826294, 5.8542786)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kyrt8"]
+size = Vector3(2.6483154, 2.4194336, 1.2989502)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4sf5t"]
 margin = 0.0
@@ -114,7 +124,7 @@ mesh = SubResource("PlaneMesh_wijl4")
 skeleton = NodePath("../../..")
 
 [node name="CafeGhost" parent="SubViewportContainer/SubViewport" unique_id=1540978287 instance=ExtResource("3_8nl7u")]
-transform = Transform3D(0.7830753, 0, -0.6219272, 0, 1, 0, 0.6219272, 0, 0.7830753, 37.32308, -1.0999002, -184.923)
+transform = Transform3D(0.7830753, 0, -0.6219272, 0, 1, 0, 0.6219272, 0, 0.7830753, 37.32308, -1.0999002, -186.78943)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewportContainer/SubViewport" unique_id=606807420]
 transform = Transform3D(583.2769, 0, 0, 0, 0.74310964, 0, 0, 0, 492.5273, 580.0529, -0.94864297, 0)
@@ -137,38 +147,6 @@ environment = SubResource("Environment_w4vhx")
 
 [node name="Sketchfab_Scene" parent="SubViewportContainer/SubViewport" unique_id=18746407 instance=ExtResource("3_r1o7h")]
 transform = Transform3D(2.1536214, 0, 0, 0, 1.8395172, 0, 0, 0, 2.5959177, 24.461285, -0.8230803, -180.0871)
-
-[node name="3d  house" parent="SubViewportContainer/SubViewport" unique_id=1159193491 instance=ExtResource("4_r1o7h")]
-transform = Transform3D(0.26912558, 0, 0.0035335557, 0, 0.29986742, 0, -0.0051204865, 0, 0.18571872, 16.519165, -2.3677006, 11.023392)
-visible = false
-
-[node name="OmniLight3D" type="OmniLight3D" parent="SubViewportContainer/SubViewport/3d  house" unique_id=1089624582]
-transform = Transform3D(2.8317962, 0, -1.1175871e-08, 0, 2.5473106, 0, 2.2351742e-08, 0, 3.5678854, 40.3304, 25.00888, 3.7321854)
-light_energy = 6.04
-light_indirect_energy = 16.0
-light_size = 0.068
-omni_range = 12.333201
-
-[node name="OmniLight3D2" type="OmniLight3D" parent="SubViewportContainer/SubViewport/3d  house" unique_id=1668708626]
-transform = Transform3D(2.8317962, 0, -1.1175871e-08, 0, 2.5473106, 0, 2.2351742e-08, 0, 3.5678854, 6.840378, 25.48655, 26.10358)
-light_energy = 6.04
-light_indirect_energy = 16.0
-light_size = 0.068
-omni_range = 12.333201
-
-[node name="OmniLight3D3" type="OmniLight3D" parent="SubViewportContainer/SubViewport/3d  house" unique_id=1814768487]
-transform = Transform3D(2.8317962, 0, -1.1175871e-08, 0, 2.5473106, 0, 2.2351742e-08, 0, 3.5678854, -30.836332, 25.79061, -1.3147392)
-light_energy = 6.04
-light_indirect_energy = 16.0
-light_size = 0.068
-omni_range = 12.333201
-
-[node name="OmniLight3D4" type="OmniLight3D" parent="SubViewportContainer/SubViewport/3d  house" unique_id=1093579192]
-transform = Transform3D(2.8317962, 0, -1.1175871e-08, 0, 2.5473106, 0, 2.2351742e-08, 0, 3.5678854, -12.813435, 25.468225, -34.299873)
-light_energy = 6.04
-light_indirect_energy = 16.0
-light_size = 0.068
-omni_range = 12.333201
 
 [node name="CanvasLayer" type="CanvasLayer" parent="SubViewportContainer/SubViewport" unique_id=19564762]
 script = ExtResource("6_o6x8k")
@@ -195,12 +173,6 @@ offset_bottom = 0.052001953
 size_flags_horizontal = 4
 size_flags_vertical = 4
 color = Color(0.7121294, 0.7121294, 0.71212935, 1)
-
-[node name="man" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1240627637]
-transform = Transform3D(11.111553, 0, 0, 0, 1, 0, 0, 0, 12.291154, 0, -0.94864297, 0)
-
-[node name="blockbench_export" parent="SubViewportContainer/SubViewport/man" unique_id=1090943879 instance=ExtResource("8_6sj2v")]
-transform = Transform3D(-0.04266702, 0, 0.11392628, 0, 1.4423325, 0, -0.068366416, 0, -0.07110058, -0.63406897, 0.4401312, -3.484282)
 
 [node name="Node3D" parent="SubViewportContainer/SubViewport" unique_id=19198192 instance=ExtResource("13_5lw2l")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.795906, 1.9520245, -104.41136)
@@ -1554,23 +1526,72 @@ material_override = SubResource("StandardMaterial3D_urblq")
 mesh = SubResource("PlaneMesh_iw27f")
 skeleton = NodePath("../../../..")
 
-[node name="CoffeeMachineTrigger" type="Area3D" parent="SubViewportContainer/SubViewport" unique_id=800042304 node_paths=PackedStringArray("StalkerAtWindow")]
+[node name="CoffeeStation" type="Area3D" parent="SubViewportContainer/SubViewport" unique_id=800042304 node_paths=PackedStringArray("CokeRefill")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.54211, 1.1585236, -185.97333)
 script = ExtResource("16_qjhbd")
-StalkerAtWindow = NodePath("../CafeGhost")
+CokeRefill = NodePath("../CokeStation")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/CoffeeMachineTrigger" unique_id=2057318050]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/CoffeeStation" unique_id=2057318050]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28668213, -0.6657715, 0.23001099)
 shape = SubResource("BoxShape3D_8nl7u")
 
-[node name="Label" type="Label" parent="SubViewportContainer/SubViewport/CoffeeMachineTrigger" unique_id=566048734]
+[node name="Label" type="Label3D" parent="SubViewportContainer/SubViewport/CoffeeStation" unique_id=21530258]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37593842, 0, 0.520401)
 visible = false
-offset_left = 205.0
-offset_top = 194.0
-offset_right = 345.0
-offset_bottom = 217.0
-theme_override_font_sizes/font_size = 10
 text = "[E] Prepare Coffee"
+
+[node name="CokeStation" type="Area3D" parent="SubViewportContainer/SubViewport" unique_id=1211909340 node_paths=PackedStringArray("StalkerAtWindow", "Broom")]
+transform = Transform3D(-0.038126238, 0, 0.999273, 0, 1, 0, -0.999273, 0, -0.038126238, 12.300752, 1.1585236, -178.5389)
+script = ExtResource("16_kyrt8")
+StalkerAtWindow = NodePath("../CafeGhost")
+Broom = NodePath("../BroomStation")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/CokeStation" unique_id=320999797]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28668213, -0.6657715, 0.23001099)
+shape = SubResource("BoxShape3D_8nl7u")
+
+[node name="Label" type="Label3D" parent="SubViewportContainer/SubViewport/CokeStation" unique_id=21106295]
+transform = Transform3D(1, 0, -1.4901161e-08, 0, 1, 0, 1.4901161e-08, 0, 1, 0.13475037, 0, -0.7517109)
+visible = false
+text = "[E] Refill Coke"
+
+[node name="BroomStation" type="Area3D" parent="SubViewportContainer/SubViewport" unique_id=1685700274 node_paths=PackedStringArray("Trash", "BroomVisual")]
+transform = Transform3D(-0.81972224, 0, -0.57276136, 0, 1, 0, 0.57276136, 0, -0.81972224, 35.232418, 1.1585236, -176.46545)
+script = ExtResource("18_kyrt8")
+Trash = NodePath("../TrashStation")
+BroomVisual = NodePath("broom")
+
+[node name="broom" parent="SubViewportContainer/SubViewport/BroomStation" unique_id=329703628 instance=ExtResource("16_w4vhx")]
+transform = Transform3D(-0.0035314113, -0.0009070857, 0.011569222, -0.00491656, 0.008488949, -0.00021126261, -0.011174205, -0.0034484002, -0.0035632988, -0.17044067, -1.9799734, -1.0102463)
+
+[node name="Label" type="Label3D" parent="SubViewportContainer/SubViewport/BroomStation" unique_id=2089815300]
+transform = Transform3D(0.99213, 0, 0.12521201, 0, 1, 0, -0.12521201, 0, 0.99213, -0.25741577, 0, -0.3303604)
+text = "[E] Pick up Broom"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/BroomStation" unique_id=196092723]
+transform = Transform3D(0.99999976, -6.9000017e-10, 0, -1.4901161e-08, 1, 1.1641532e-08, 8.940697e-08, -3.8905537e-09, 1, -0.19923401, -0.66576767, -0.750412)
+shape = SubResource("BoxShape3D_8nl7u")
+
+[node name="TrashStation" type="Area3D" parent="SubViewportContainer/SubViewport" unique_id=1556446868]
+transform = Transform3D(-0.81972224, 0, -0.57276136, 0, 1, 0, 0.57276136, 0, -0.81972224, 35.232418, 1.1585236, -176.46545)
+script = ExtResource("20_ser54")
+
+[node name="trash" parent="SubViewportContainer/SubViewport/TrashStation" unique_id=260589942 instance=ExtResource("18_ctt2i")]
+transform = Transform3D(-0.8197221, 0, 0.5727613, 0, 1, 0, -0.5727613, 0, -0.8197221, 4.3111954, -1.9816909, 2.7627487)
+
+[node name="Trash_Pile_03_GEO" parent="SubViewportContainer/SubViewport/TrashStation/trash/Sketchfab_model/bc03eba6a9be4eeeac0b70f1076a7f5f_fbx/RootNode" parent_id_path=PackedInt32Array(260589942, 1409162781) index="0" unique_id=870169890]
+visible = false
+
+[node name="Trahs_Pile_01_GEO" parent="SubViewportContainer/SubViewport/TrashStation/trash/Sketchfab_model/bc03eba6a9be4eeeac0b70f1076a7f5f_fbx/RootNode" parent_id_path=PackedInt32Array(260589942, 1409162781) index="2" unique_id=279952626]
+visible = false
+
+[node name="Label" type="Label3D" parent="SubViewportContainer/SubViewport/TrashStation" unique_id=1541112858]
+transform = Transform3D(0.82654274, 0.4783997, -0.29658246, -0.018629074, 0.5498686, 0.83504343, 0.5625659, -0.6846739, 0.46340206, 2.133072, -1.4012356, 2.085312)
+text = "[E] Sweep Trash"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/TrashStation" unique_id=18696713]
+transform = Transform3D(-0.8197221, 0, 0.5727613, 0, 1, 0, -0.5727613, 0, -0.8197221, 2.0105286, -1.6296401, 1.7422256)
+shape = SubResource("BoxShape3D_ser54")
 
 [node name="IntroTrigger" type="Area3D" parent="SubViewportContainer/SubViewport" unique_id=956073705]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.001194, 0.30317998, -180.98866)
@@ -1582,6 +1603,60 @@ shape = SubResource("BoxShape3D_w4vhx")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SubViewportContainer/SubViewport" unique_id=1551320327]
 
+[node name="OmniLight3D" type="OmniLight3D" parent="SubViewportContainer/SubViewport" unique_id=1714309512]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.00817, 2.53567, -172.1015)
+omni_attenuation = -0.149
+
+[node name="SpotLight3D" type="SpotLight3D" parent="SubViewportContainer/SubViewport" unique_id=487943971]
+transform = Transform3D(1, 0, 0, 0, 0.008080777, 0.9999674, 0, -0.9999674, 0.008080777, 33.327145, 5.168367, -177.64552)
+spot_range = 7.937
+spot_attenuation = -0.11
+spot_angle = 121.38
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="SubViewportContainer/SubViewport" unique_id=1369952257]
+transform = Transform3D(1, 0, 0, 0, 0.008080777, 0.9999674, 0, -0.9999674, 0.008080777, 33.327145, 5.168367, -180.88063)
+spot_range = 7.937
+spot_attenuation = 0.4
+spot_angle = 121.38
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="SubViewportContainer/SubViewport" unique_id=529765019]
+transform = Transform3D(1, 0, 0, 0, 0.008080777, 0.9999674, 0, -0.9999674, 0.008080777, 33.327145, 5.168367, -184.80525)
+spot_range = 7.937
+spot_attenuation = -0.11
+spot_angle = 121.38
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="SubViewportContainer/SubViewport" unique_id=1552484816]
+transform = Transform3D(1, 0, 0, 0, 0.008080777, 0.9999674, 0, -0.9999674, 0.008080777, 29.848053, 5.168367, -184.80525)
+spot_range = 7.937
+spot_attenuation = -0.11
+spot_angle = 121.38
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="SubViewportContainer/SubViewport" unique_id=519586]
+transform = Transform3D(1, 0, 0, 0, 0.008080777, 0.9999674, 0, -0.9999674, 0.008080777, 29.848053, 5.168367, -177.63779)
+spot_range = 7.937
+spot_attenuation = -0.11
+spot_angle = 121.38
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="SubViewportContainer/SubViewport" unique_id=1596418347]
+transform = Transform3D(1, 0, 0, 0, 0.008080777, 0.9999674, 0, -0.9999674, 0.008080777, 29.848053, 5.168367, -188.0689)
+spot_range = 7.937
+spot_attenuation = -0.11
+spot_angle = 121.38
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="SubViewportContainer/SubViewport" unique_id=1840979010]
+transform = Transform3D(1, 0, 0, 0, 0.008080777, 0.9999674, 0, -0.9999674, 0.008080777, 33.249325, 5.168367, -188.0689)
+spot_range = 7.937
+spot_attenuation = -0.11
+spot_angle = 121.38
+
+[node name="CafeShiftManager" type="Area3D" parent="SubViewportContainer/SubViewport" unique_id=939652235]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.578804, 3.4563315, -180.14783)
+script = ExtResource("21_v0tpj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/CafeShiftManager" unique_id=312004014]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.3676605, -3.101523, -5.0639343)
+shape = SubResource("BoxShape3D_kyrt8")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1998087348]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.535095, -1.0789068, -84.25635)
 shape = SubResource("BoxShape3D_4sf5t")
@@ -1589,3 +1664,4 @@ shape = SubResource("BoxShape3D_4sf5t")
 [connection signal="body_entered" from="SubViewportContainer/SubViewport/IntroTrigger" to="SubViewportContainer/SubViewport/IntroTrigger" method="_on_body_entered"]
 
 [editable path="SubViewportContainer/SubViewport/PlayerPackage"]
+[editable path="SubViewportContainer/SubViewport/TrashStation/trash"]

@@ -1,0 +1,60 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" uid="uid://c7psjp33u27si" path="res://Scenes/PlayerPackage.tscn" id="1_home"]
+[ext_resource type="Script" path="res://Scripts/HomeTrigger.cs" id="2_home"]
+[ext_resource type="Script" path="res://Scripts/DialogueManager.cs" id="3_home"]
+
+[sub_resource type="Environment" id="Environment_home"]
+background_color = Color(0.005, 0.008, 0.03, 1)
+background_energy_multiplier = 0.15
+ambient_light_color = Color(0.04, 0.06, 0.14, 1)
+ambient_light_energy = 0.06
+glow_enabled = true
+glow_bloom = 0.06
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_floor"]
+size = Vector3(20.0, 0.4, 20.0)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bag"]
+size = Vector3(1.5, 1.5, 1.5)
+
+[node name="Home" type="Node3D"]
+
+[node name="PlayerPackage" parent="." instance=ExtResource("1_home")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 2)
+
+[node name="WorldEnvironment" parent="."]
+type = "WorldEnvironment"
+environment = SubResource("Environment_home")
+
+[node name="MoonLight" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.877, 0.448, -0.174, 0.240, 0.721, 0.650, 0.417, 0.528, -0.740, 0, 8.0, 0)
+light_color = Color(0.7, 0.82, 1.0, 1)
+light_energy = 0.15
+shadow_enabled = true
+
+[node name="Floor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("BoxShape3D_floor")
+
+[node name="BagTrigger" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.75, 0)
+script = ExtResource("2_home")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BagTrigger"]
+shape = SubResource("BoxShape3D_bag")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("3_home")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect"]
+offset_top = 200.0

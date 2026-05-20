@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://7lgwclwprfh0"]
+
+[ext_resource type="PackedScene" uid="uid://f01okkq5rvr3" path="res://Assets/Customers/werewolf.glb" id="1_cit2j"]
+[ext_resource type="Script" uid="uid://dpei1opnvfyb5" path="res://Scripts/CustomerWalk.cs" id="2_walkcs"]
+
+[node name="Customer3" type="Node3D" unique_id=2092233411]
+transform = Transform3D(-0.006126657, 0, 2.0602863, 0, 2.3180857, 0, -2.2943568, 0, -0.005501583, 0, 0, 0)
+script = ExtResource("2_walkcs")
+
+[node name="Sketchfab_Scene" parent="." unique_id=546211271 instance=ExtResource("1_cit2j")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, -2.3283064e-10, 0, 1, 0.00932258, 0, -0.00017970055)
+
+[node name="Sketchfab_model" parent="Sketchfab_Scene" index="0" unique_id=458555872]
+transform = Transform3D(1.7781477, -4.656613e-10, -2.5849394e-25, 0, 4.1136724e-16, 1.5338514, -1.8626451e-09, -1.8526341, 3.4058348e-16, 0, 0, 0)
+
+[editable path="Sketchfab_Scene"]

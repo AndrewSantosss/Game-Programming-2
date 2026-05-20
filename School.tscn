@@ -1,0 +1,60 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" uid="uid://c7psjp33u27si" path="res://Scenes/PlayerPackage.tscn" id="1_school"]
+[ext_resource type="Script" path="res://Scripts/HomeTrigger.cs" id="2_school"]
+[ext_resource type="Script" path="res://Scripts/DialogueManager.cs" id="3_school"]
+
+[sub_resource type="Environment" id="Environment_school"]
+background_color = Color(0.45, 0.55, 0.7, 1)
+background_energy_multiplier = 1.2
+ambient_light_color = Color(0.6, 0.65, 0.75, 1)
+ambient_light_energy = 0.4
+glow_enabled = false
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_floor"]
+size = Vector3(40.0, 0.4, 40.0)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_exit"]
+size = Vector3(3.0, 3.0, 1.0)
+
+[node name="School" type="Node3D"]
+
+[node name="PlayerPackage" parent="." instance=ExtResource("1_school")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 5)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_school")
+
+[node name="SunLight" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.877, 0.448, -0.174, 0.240, 0.721, 0.650, 0.417, 0.528, -0.740, 0, 12.0, 0)
+light_color = Color(1.0, 0.95, 0.85, 1)
+light_energy = 1.2
+shadow_enabled = true
+
+[node name="Floor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("BoxShape3D_floor")
+
+[node name="SchoolExitTrigger" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -15)
+script = ExtResource("2_school")
+NextScene = "res://map.tscn"
+DepartureDialogue = PackedStringArray("John: Pasado na ang klase. Tara na, hintay si pre sa cafe.", "John: Malapit na rin naman yun.")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SchoolExitTrigger"]
+shape = SubResource("BoxShape3D_exit")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("3_school")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect"]
+offset_top = 200.0
