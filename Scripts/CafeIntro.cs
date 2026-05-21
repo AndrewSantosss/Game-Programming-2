@@ -3,25 +3,29 @@ using System;
 
 public partial class CafeIntro : Area3D
 {
-    private bool _hasStarted = false;
+	private bool _hasStarted = false;
 
-    public void _on_body_entered(Node body)
-    {
-        if (body is Player player && !_hasStarted)
-        {
-            _hasStarted = true;
-            player.IsLocked = true; // Stop player movement
+	public void _on_body_entered(Node body)
+	{
+		if (body is Player player && !_hasStarted)
+		{
+			_hasStarted = true;
+			player.IsLocked = true; // Stop player movement
 
-            var dm = GetNode<DialogueManager>("/root/DialogueManager");
-            string[] introLines = {
-                "John: Hay nako, panibagong shift nanaman.",
-                "Manager (Internal): 'John! Siguraduhin mong matapos 'yung 3 orders bago ka umuwi!'",
+			var dm = GetNode<DialogueManager>("/root/DialogueManager");
+			string[] introLines = {
+				"John: Hay nako, panibagong shift nanaman.",
+				"Manager (Internal): 'John! Siguraduhin mong matapos 'yung 3 orders bago ka umuwi!'",
                 "John: Sige po... 3 orders lang pala eh. Kayang kaya."
-            };
+			};
 
-            dm.StartDialogue(introLines, () => {
-                player.IsLocked = false; // Allow player to work
-            });
-        }
-    }
+			// INAYOS: Pinagsama ang player unlock at Todo trigger sa iisang callback block
+			dm.StartDialogue(introLines, () => {
+				player.IsLocked = false; // Allow player to work
+				
+				// Lalabas ang To-Do task pagkatapos ng usapan
+				GetNode<TodoManager>("/root/TodoManager").UpdateTodoText("Make coffee");
+			});
+		}
+	}
 }

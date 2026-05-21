@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="I Cannot Believe My Eyes"
-run/main_scene="uid://bfkgbyp748t1o"
+run/main_scene="uid://ccf7q8bbm72va"
 config/features=PackedStringArray("4.6", "C#", "Forward Plus")
 run/low_processor_mode=true
 boot_splash/bg_color=Color(0, 0, 0, 1)
@@ -29,6 +29,7 @@ buses/default_bus_layout=""
 [autoload]
 
 DialogueManager="*uid://dsh10qs3mj6ww"
+TodoManager="*uid://ys1mnh158ci8"
 
 [display]
 

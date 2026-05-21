@@ -4,7 +4,8 @@
 [ext_resource type="Script" uid="uid://dpei1opnvfyb5" path="res://Scripts/CustomerWalk.cs" id="2_walkcs"]
 
 [node name="Customer2" type="Node3D" unique_id=19114474]
-transform = Transform3D(0.0016769804, 0, 1.347358, 0, 1.3439839, 0, -1.2478846, 0, 0.0018106662, 0, 0, 0)
+transform = Transform3D(0.016138501, 0, -1.3472465, 0, 1.3439839, 0, 1.2477813, 0, 0.01742495, 0, 0, 0)
 script = ExtResource("2_walkcs")
 
 [node name="Sketchfab_Scene" parent="." unique_id=484279712 instance=ExtResource("1_qit4a")]
+transform = Transform3D(-0.99921405, 0, 0.039643545, 0, 1, 0, -0.039643537, 0, -0.99921393, 0, 0, 0)

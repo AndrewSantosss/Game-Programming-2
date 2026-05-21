@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://ys1mnh158ci8"]
+
+[ext_resource type="Script" uid="uid://cgen4w28m552h" path="res://Scripts/TodoManager.cs" id="1_dlm0h"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dlm0h"]
+font_size = 5
+font_color = Color(1, 1, 0, 1)
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="TodoUI" type="Control" unique_id=398867854]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dlm0h")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1315446823]
+
+[node name="TodoLabel" type="Label" parent="CanvasLayer" unique_id=910389865]
+anchors_preset = -1
+offset_left = 7.0
+offset_top = 18.0
+offset_right = 47.0
+offset_bottom = 41.0
+text = "vrrv"
+label_settings = SubResource("LabelSettings_dlm0h")

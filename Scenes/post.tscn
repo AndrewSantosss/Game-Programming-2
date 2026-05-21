@@ -7,11 +7,19 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y8vuy"]
 albedo_texture = ExtResource("1_qdpgs")
+texture_filter = 0
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_ymue7"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_qb3by"]
+size = Vector3(1, 2, 1)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hgv03"]
 albedo_texture = ExtResource("1_qdpgs")
+texture_filter = 0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nfw3l"]
+size = Vector3(1, 2, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xufto"]
 albedo_color = Color(0.24840015, 0.24840018, 0.24840015, 1)
@@ -39,10 +47,21 @@ transform = Transform3D(10.548819, 0, 0, 0, 87.498245, 0, 0, 0, 10.738677, 0, 52
 material_override = SubResource("StandardMaterial3D_y8vuy")
 mesh = SubResource("CylinderMesh_ymue7")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D9" unique_id=231344052]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D9/StaticBody3D" unique_id=950204780]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
+shape = SubResource("BoxShape3D_qb3by")
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1881393209]
 transform = Transform3D(10.548819, 0, 0, 0, 87.498245, 0, 0, 0, 10.738677, 0, 52.73609, 0)
 material_override = SubResource("StandardMaterial3D_hgv03")
 mesh = SubResource("CylinderMesh_ymue7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=662096138]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=668669073]
+shape = SubResource("BoxShape3D_nfw3l")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="." unique_id=83300484]
 transform = Transform3D(0.9999519, -0.0024724458, 0.7635453, 0, 0.9677092, 20.276978, -0.009808593, -0.25205722, 77.840775, -3.5333757, 105.28877, -42.76494)

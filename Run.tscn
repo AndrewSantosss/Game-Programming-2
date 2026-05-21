@@ -72,6 +72,14 @@ uv1_scale = Vector3(70, 1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_sb2pt"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_mbll2"]
+size = Vector3(1, 1, 1.1561279)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nnctx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oxym8"]
+size = Vector3(1, 1, 1.1582031)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_urblq"]
 albedo_texture = ExtResource("13_jlse2")
 uv1_scale = Vector3(1, 50, 1)
@@ -88,8 +96,8 @@ size = Vector3(127.07019, 1, 268.5127)
 
 [node name="map" type="StaticBody3D" unique_id=2128084856 node_paths=PackedStringArray("StalkerSpawnPoint", "HorrorStinger")]
 script = ExtResource("1_cgegw")
-GhostScene = ExtResource("3_mbll2")
 StalkerSpawnPoint = NodePath("SubViewportContainer/SubViewport/Marker3D")
+GhostScene = ExtResource("3_mbll2")
 HorrorStinger = NodePath("SubViewportContainer/SubViewport/AudioStreamPlayer3D")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=558519148]
@@ -1534,15 +1542,32 @@ transform = Transform3D(0.060025096, 0, 0, 0, 5.8238163, 0, 0, 0, 11.028481, -0.
 material_override = SubResource("StandardMaterial3D_4on3e")
 mesh = SubResource("BoxMesh_sb2pt")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/wall2/MeshInstance3D2" unique_id=888075458]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/wall2/MeshInstance3D2/StaticBody3D" unique_id=1652398487]
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 0, 0, 0.078063965)
+shape = SubResource("BoxShape3D_mbll2")
+
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/wall2" unique_id=611408127]
-transform = Transform3D(0.0003047234, 0, -11.347694, 0, 5.823816, 0, 0.05490383, 0, 0.06298233, 0.24639766, 1.7732098, -16.313585)
+transform = Transform3D(0.0003047234, 0, -11.347694, 0, 5.823816, 0, 0.05490383, 0, 0.06298233, 0.24639766, 1.7732098, -15.570299)
 material_override = SubResource("StandardMaterial3D_4on3e")
 mesh = SubResource("BoxMesh_sb2pt")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/wall2/MeshInstance3D3" unique_id=1759910190]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/wall2/MeshInstance3D3/StaticBody3D" unique_id=717420570]
+shape = SubResource("BoxShape3D_nnctx")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="SubViewportContainer/SubViewport/wall2" unique_id=28264956]
 transform = Transform3D(0.060025096, 0, 0, 0, 5.823816, 0, 0, 0, 11.028481, 0.99579823, 1.7732098, -8.437201)
 material_override = SubResource("StandardMaterial3D_4on3e")
 mesh = SubResource("BoxMesh_sb2pt")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SubViewportContainer/SubViewport/wall2/MeshInstance3D4" unique_id=656604113]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewportContainer/SubViewport/wall2/MeshInstance3D4/StaticBody3D" unique_id=1509341760]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.07910156)
+shape = SubResource("BoxShape3D_oxym8")
 
 [node name="road" type="Node3D" parent="SubViewportContainer/SubViewport" unique_id=1370999109]
 transform = Transform3D(11.111553, 0, 0, 0, 1, 0, 0, 0, 12.291154, 0, -0.94864297, 0)

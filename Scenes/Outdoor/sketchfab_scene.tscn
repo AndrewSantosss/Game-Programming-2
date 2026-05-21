@@ -2,7 +2,174 @@
 
 [ext_resource type="PackedScene" uid="uid://c2eh851rjfaqn" path="res://Assets/Areas/model/vr_store.glb" id="1_cwftj"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_cwftj"]
+size = Vector3(102.2306, 31.2738, 62.8547)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gbksh"]
+size = Vector3(218.30379, 98.292404, 85.242805)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l5ugc"]
+size = Vector3(45.28929, 32.119194, 77.407196)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dsrka"]
+size = Vector3(97.4022, 32.29309, 86.8487)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dxudj"]
+size = Vector3(190.3151, 22.150902, 60.731598)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_athfv"]
+size = Vector3(148.4573, 33.4843, 67.3228)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dymgr"]
+size = Vector3(17.136803, 46.1316, 43.6825)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_afcly"]
+size = Vector3(19.303703, 20.3463, 28.3813)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_52iix"]
+size = Vector3(30.094086, 164.7409, 31.550602)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5l30a"]
+size = Vector3(75.6268, 57.1737, 67.5398)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_27i88"]
+size = Vector3(44.199295, 20.167694, 41.1293)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w7fky"]
+size = Vector3(17.783798, 21.789398, 46.783302)
+
 [node name="711" unique_id=18746407 instance=ExtResource("1_cwftj")]
 
-[node name="Object_109" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(1386067813) index="107" unique_id=1041949369]
+[node name="Object_11" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(679611245) index="9" unique_id=1167637236]
+visible = false
+
+[node name="Object_13" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(679611245) index="11" unique_id=340936286]
+visible = false
+
+[node name="Object_14" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(679611245) index="12" unique_id=485360763]
+visible = false
+
+[node name="Object_15" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(679611245) index="13" unique_id=1115503281]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.028088093, -0.024333, 0.3628087)
+visible = false
+
+[node name="Object_16" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(679611245) index="14" unique_id=974450024]
+visible = false
+
+[node name="Object_20" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(679611245) index="18" unique_id=2098260413]
+visible = false
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles/Object_24" parent_id_path=PackedInt32Array(257929624) index="0" unique_id=1780006873]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -113.884705, -15.4979, 31.42735)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles/Object_24/StaticBody3D" index="0" unique_id=1020546246]
+shape = SubResource("BoxShape3D_cwftj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles/Object_28" parent_id_path=PackedInt32Array(550576546) index="0" unique_id=961735128]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.68199, 127.2871, 42.643303)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles/Object_28/StaticBody3D" index="0" unique_id=518318630]
+shape = SubResource("BoxShape3D_gbksh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles/Object_40" parent_id_path=PackedInt32Array(909962096) index="0" unique_id=1033907712]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -192.85086, 114.1142, 38.765697)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles/Object_40/StaticBody3D" index="0" unique_id=1992491755]
+shape = SubResource("BoxShape3D_l5ugc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles/Object_41" parent_id_path=PackedInt32Array(1840868719) index="0" unique_id=747775649]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -115.914, 143.08945, 43.42435)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles/Object_41/StaticBody3D" index="0" unique_id=642186152]
+shape = SubResource("BoxShape3D_dsrka")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles/Object_44" parent_id_path=PackedInt32Array(344516610) index="0" unique_id=187129014]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 98.675446, 87.167755, 33.994698)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles/Object_44/StaticBody3D" index="0" unique_id=957922750]
+shape = SubResource("BoxShape3D_dxudj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles/Object_46" parent_id_path=PackedInt32Array(1135664025) index="0" unique_id=140191148]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.760849, -86.04375, 33.6614)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles/Object_46/StaticBody3D" index="0" unique_id=1723542189]
+shape = SubResource("BoxShape3D_athfv")
+
+[node name="Object_47" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(679611245) index="45" unique_id=746366041]
+visible = false
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles/Object_49" parent_id_path=PackedInt32Array(1038788942) index="0" unique_id=1852046694]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.672, -12.498299, 21.84125)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles/Object_49/StaticBody3D" index="0" unique_id=1697261526]
+shape = SubResource("BoxShape3D_dymgr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles/Object_55" parent_id_path=PackedInt32Array(1496112804) index="0" unique_id=160994547]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.479355, 20.98685, 14.29835)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles/Object_55/StaticBody3D" index="0" unique_id=957326624]
+shape = SubResource("BoxShape3D_afcly")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles/Object_57" parent_id_path=PackedInt32Array(2121860094) index="0" unique_id=320792858]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -211.50325, -11.203644, 19.358902)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles/Object_57/StaticBody3D" index="0" unique_id=1730559563]
+shape = SubResource("BoxShape3D_52iix")
+
+[node name="Object_73" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(679611245) index="71" unique_id=823132200]
+visible = false
+
+[node name="Object_74" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(679611245) index="72" unique_id=1628120672]
+visible = false
+
+[node name="Object_75" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(679611245) index="73" unique_id=1416134589]
+visible = false
+
+[node name="Object_76" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(679611245) index="74" unique_id=493681624]
+visible = false
+
+[node name="Object_77" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(679611245) index="75" unique_id=1432466759]
+visible = false
+
+[node name="Object_83" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(679611245) index="81" unique_id=1360542610]
+visible = false
+
+[node name="Object_84" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(679611245) index="82" unique_id=1347901752]
+visible = false
+
+[node name="Object_85" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(679611245) index="83" unique_id=1658261643]
+visible = false
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles/Object_86" parent_id_path=PackedInt32Array(2050681418) index="0" unique_id=2002804782]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.351, 0.9117489, 33.7699)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles/Object_86/StaticBody3D" index="0" unique_id=1899973023]
+shape = SubResource("BoxShape3D_5l30a")
+
+[node name="Object_96" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(679611245) index="94" unique_id=977068972]
+visible = false
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles/Object_100" parent_id_path=PackedInt32Array(345092604) index="0" unique_id=1931191482]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.64885, 151.24455, 23.82115)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles/Object_100/StaticBody3D" index="0" unique_id=1115069151]
+shape = SubResource("BoxShape3D_27i88")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles/Object_102" parent_id_path=PackedInt32Array(1807188074) index="0" unique_id=1983699049]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -158.49161, -82.6671, 26.642351)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles/Object_102/StaticBody3D" index="0" unique_id=1922543024]
+shape = SubResource("BoxShape3D_w7fky")
+
+[node name="Object_106" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(679611245) index="104" unique_id=1388707922]
+visible = false
+
+[node name="Object_108" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(679611245) index="106" unique_id=1195739347]
+visible = false
+
+[node name="Object_109" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(679611245) index="107" unique_id=255940505]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13700247, -0.26524305, 0.5154866)
+visible = false
+
+[node name="Object_110" parent="Sketchfab_model/03_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(679611245) index="108" unique_id=1913144734]
+visible = false
